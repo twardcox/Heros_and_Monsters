@@ -14,7 +14,11 @@
 //NOTE: This function might be the event listener or the function call
 // for the listener(24 Jun. 2019)
 function combat(heroObj, monsterObj) {
-
+  monsterObj.Hp -= heroAttack('addlater');
+  heroObj.Hp -= monsterAttack('addLater');
+  heroSave(heroObj);
+  monsterSave(monsterObj);
+  //TODO: add logic for Hp===0.
 }
 
 
@@ -28,7 +32,7 @@ function combat(heroObj, monsterObj) {
 */
 function heroAttack(ability, target) {
   var damage;
-
+  damage = Math.random() * 15;
   return damage;
 }
 
@@ -42,7 +46,9 @@ function heroAttack(ability, target) {
 */
 // NOTE: ability will be NULL for MVP and unused in the function (24 Jun. 2019)
 function monsterAttack(ability, target) {
-
+  var damage;
+  damage = Math.random() * 15;
+  return damage;
 }
 
 // TODO: Create a function that displays hero stats.
