@@ -48,5 +48,9 @@ function heroSave(heroObj){
 @desc: This function will load the hero object from local storage.
 */
 function heroLoad(heroName){
-
+  var dataStr = localStorage.getItem(heroName);
+  dataStr = JSON.parse(dataStr);
+  var tempHero = new Hero(dataStr['Name'], dataStr['Hp'], dataStr['Mp'], dataStr['hClass'], dataStr['killCount'], dataStr['imgPath']);
+  return tempHero;
 }
+
