@@ -9,3 +9,5 @@ As a player I want a visually entertaining game.
 As a developer I want to do the most with the least amount of code.
 
 As a Codefellows Instructor who has to grade several projects I want easy to read, well commented, formatted code.
+
+As a develper I want to build a game for users to navigate easily and can enjoy the game.
