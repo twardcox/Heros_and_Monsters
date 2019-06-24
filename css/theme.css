@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 95%;
+  margin: auto;
+  background-color: rgb(245, 245, 245);
+  font-family: fantasy;
+  color: rgb(49, 49, 49);
+}
+
+header {
+  border-bottom: 3px solid #353434;
+  height: 150;
+  padding: 2vh;
+  width: 100%;
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
