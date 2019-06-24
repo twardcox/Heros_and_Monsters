@@ -3,12 +3,13 @@
 
  ## Features to include in our MVP:
 
+ - Allow player to enter name
+ - Save a player's character and battle stats
  - Each type of hero will have four different actions/attacks
  - Allow the player to choose between fighting a monster or resting 
  - Keep track of hero stats: HP, MP EXP
  - The hero will continue to fight monsters until the hero is defeated 
  - Include some kind of leveling system
- - Save a player's character and battle stats
 
 ## Stretch goals
-- Ability for the player to choose a character (warrior, ranger or mage) and name the selected character
+- Ability for the player to choose a character (warrior, ranger or mage) 
