@@ -9,12 +9,15 @@ function Monster(name, hp, mp, imgPath){
 // DONE: Add a function to save monster data to local storage
 function monsterSave(monsterObj) {
 var data = JSON.stringify(monsterObj);
-localStorage.setItem(monsterObj.name,data);
+localStorage.setItem(monsterObj.Name,data);
 }
 
 // TODO: Add a function to load monster data from local storage.
 function monsterLoad(monsterName) {
-
+  var dataStr = localStorage.getItem(monsterName);
+  dataStr = JSON.parse(dataStr);
+  var tempMonster = new Monster(dataStr['Name'], dataStr['Hp'], dataStr['Mp'],dataStr['imgPath']);
+  return tempMonster;
 }
 
 
