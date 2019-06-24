@@ -12,3 +12,10 @@ Project overview & details: https://github.com/heros-and-monsters/project-week/b
 Wireframes: https://whimsical.com/SMoxUXiNcPfbXKZyp2qz9r
 
 User stories: https://github.com/heros-and-monsters/project-week/blob/dev/user-stories.md
+
+## Versions
+
+###1.0.0 - June 24, 2019
+- Project initialized 
+- Files scaffolded 
+- Images gathered & uploaded
