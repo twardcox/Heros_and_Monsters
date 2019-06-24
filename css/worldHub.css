@@ -1,0 +1,84 @@
+h1 {
+    text-align: center;
+}
+
+main > section:first-child {
+
+    height: 40vh;
+    position: relative;
+}
+
+main > section:last-child {
+
+    height: 40vh;
+    position: relative;
+}
+
+img {
+    position:absolute;
+    top: 10%;
+    left: 10%;
+    width: 30vw;
+}
+
+main > section > article {
+
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    float: right;
+
+}
+
+main > section:last-child > article {
+
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    float: right;
+
+}
+
+button {
+    font-size: 2em;
+    color: white;
+    background-color: blue;
+    padding: 1.5vw;
+    margin: 1vw;
+}
+
+h3 {
+    font-size: 1.5em;
+    padding: 20px
+}
+
+ul {
+  padding: 0;  
+}
+
+li {
+    padding: 1vh;
+}
+
+.outerMeter {
+   
+    background-color: darkgray;
+    width: 350px;
+    height: 35px;
+    margin: 5px;
+
+}
+
+#hpMeter {
+    height: 35px;
+    width: 150px;
+    background-color: green;
+
+}
+
+#mpMeter {
+    height: 35px;
+    width: 250px;
+    background-color: green;
+    
+}
