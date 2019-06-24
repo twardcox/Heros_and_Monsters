@@ -1,5 +1,7 @@
 # Project Overview
  We are planning to create a turn-based role playing game where a player can select actions for thier character to take against a monster. We will be keeping stats for both the hero and the monsters encountered. Each action selected by the player will impact these stats. The player will continue to select actions and battle the monster until either is defeated. 
+ 
+ Wireframes: https://whimsical.com/SMoxUXiNcPfbXKZyp2qz9r
 
  ## Features to include in our MVP:
 
