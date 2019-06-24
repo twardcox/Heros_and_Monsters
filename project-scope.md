@@ -8,3 +8,4 @@
  - Keep track of hero stats: HP, MP EXP
  - The hero will continue to fight monsters until the hero is defeated 
  - Include some kind of leveling system
+ - Save a player's character and battle stats
