@@ -1,6 +1,7 @@
 // This file will hold all logic for the combatArena HTML page.
 
-// TODO: Form event handler required.
+//TODO: create on click function for 4 buttons
+
 
 // TODO: complete the function to hadle combat logic.
 /*
@@ -15,10 +16,18 @@
 // for the listener(24 Jun. 2019)
 function combat(heroObj, monsterObj) {
   monsterObj.Hp -= heroAttack('addlater');
+  if (monsterObj.Hp <= 0){
+    return 0;
+  }
   heroObj.Hp -= monsterAttack('addLater');
+  if (heroObj.Hp <= 0){
+    return 1;
+  }
   heroSave(heroObj);
   monsterSave(monsterObj);
-  //TODO: add logic for Hp===0.
+
+  //DONE: add logic for Hp===0.
+
 }
 
 
