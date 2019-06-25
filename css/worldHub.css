@@ -39,13 +39,6 @@ main > section:last-child > article {
 
 }
 
-button {
-    font-size: 2em;
-    color: white;
-    background-color: blue;
-    padding: 1.5vw;
-    margin: 1vw;
-}
 
 h3 {
     font-size: 1.5em;
@@ -57,7 +50,7 @@ ul {
 }
 
 li {
-    padding: 1vh;
+    margin-bottom: 15px; 
 }
 
 .outerMeter {
@@ -65,20 +58,25 @@ li {
     background-color: darkgray;
     width: 350px;
     height: 35px;
-    margin: 5px;
 
 }
 
 #hpMeter {
     height: 35px;
     width: 150px;
-    background-color: green;
+    background-color: #0559AD;
 
 }
 
 #mpMeter {
     height: 35px;
     width: 250px;
-    background-color: green;
+    background-color: #0559AD;
     
+}
+
+.battles {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 20px;
 }

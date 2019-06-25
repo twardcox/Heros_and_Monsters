@@ -1,8 +1,11 @@
+'use strict';
 // https://www.w3schools.com/howto/howto_css_modals.asp
 
 // Get the element of the modal container
 var modalEl = document.getElementById('modal-container');
 
+// location of hero DATA
+var charName = localStorage.getItem('name');
 // OPEN THE MODAL
 
 // Get the element of the open modal button
@@ -10,17 +13,36 @@ var modalEl = document.getElementById('modal-container');
 var openModalEl = document.getElementById('open-modal');
 
 // Display the modal
-openModalEl.addEventListener('click', function(){ 
+openModalEl.addEventListener('click', function() {
   modalEl.style.display = 'block';
 
   var modalMsgEl = document.getElementById('modal-message');
 
-  if (window.location.href.indexOf('combatArena') !== -1) {
-    modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
-  } else if (window.location.href.indexOf('worldHub') !== -1) {
+  // if (window.location.href.indexOf('combatArena') !== -1) {
+  //   modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
+  // } else 
+  if (window.location.href.indexOf('worldHub') !== -1) {
     modalMsgEl.innerHTML = 'Refuled and ready to go';
+    var tempHero = heroLoad(charName);
+    heroRest(tempHero);
+    console.log(tempHero);
+    heroSave(tempHero);
+    setMeter('hpMeter', 100, 100);
+    setMeter('mpMeter', 100, 100);
   }
 });
+
+function battleResult(whoWon){
+  modalEl.style.display = 'block';
+  var modalMsgEl = document.getElementById('modal-message');
+  if(whoWon === 0) { // Hero Victory
+    modalMsgEl.innerHTML = 'You won defetead the monster!';
+  }
+  else {
+    modalMsgEl.innerHTML = 'You have been defetead...';
+  }
+}
+
 
 
 
@@ -30,11 +52,9 @@ openModalEl.addEventListener('click', function(){
 var closeBtnEl = document.getElementById('modal-close');
 
 // Exit the modal
-closeBtnEl.addEventListener('click', function(){
+closeBtnEl.addEventListener('click', function() {
   modalEl.style.display = 'none';
 });
-
-
 
 // CONTINUE FROM THE MODAL (RETURN TO THE WORLDHUB PAGE)
 
@@ -42,7 +62,7 @@ closeBtnEl.addEventListener('click', function(){
 var contBtnEl = document.getElementById('modal-continue');
 
 // Exit the modal
-contBtnEl.addEventListener('click', function(){
+contBtnEl.addEventListener('click', function() {
   modalEl.style.display = 'none';
   window.location.href = 'worldHub.html';
 });

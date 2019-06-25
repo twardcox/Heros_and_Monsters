@@ -7,16 +7,10 @@
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/worldHub.css" />
     <link rel="stylesheet" href="../css/modal.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat:400,700&display=swap" rel="stylesheet" />
     <title>Choose your fate.</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./combatArena.html">Let's do battle</a></li>
-        </ul>
-      </nav>
-    </header>
     <h1>Welcome <span id="backTag">back </span><span id="nameTag">Bill</span></h1>
     <main>
       <section>
@@ -24,36 +18,37 @@
         <article>
           <ul>
             <li>
+              <strong>HP: </strong>
               <div class="outerMeter"><div id="hpMeter"></div></div>
             </li>
             <li>
+              <strong>MP:</strong>
               <div class="outerMeter"><div id="mpMeter"></div></div>
             </li>
           </ul>
-          <h3>Battles won: 13</h3>
+          <p class="battles">Battles won: <span id="kill-count">13</span></p>
         </article>
       </section>
       <section>
         <article>
-          <button id="open-modal">Rest/Refuel</button>
-          <button>Start Another Battle</button>
+          <button id="start-battle">Begin a Battle</button>
+          <button id="open-modal">Rest &amp; Refuel</button>
         </article>
       </section>
     </main>
 
     <!-- The Modal -->
     <div id="modal-container" class="modal">
-
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
         <p id="modal-message"></p>
         <button id="modal-close">Continue</button>
       </div>
-
     </div>
 
-    <script src="../js/hero.js"></script>
     <script src="../js/modal.js"></script>
+    <script src="../js/hero.js"></script>
+    <script src="../js/worldHub.js"></script>
   </body>
 </html>
