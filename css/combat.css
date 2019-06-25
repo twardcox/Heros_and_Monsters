@@ -1,0 +1,44 @@
+.outerMeter {
+   
+  background-color: darkgray;
+  width: 175px;
+  height: 15px;
+  margin: 10px;
+
+}
+
+#hpMeter {
+  height: 15px;
+  width: 100px;
+  background-color: green;
+
+}
+
+#mpMeter {
+  height: 15px;
+  width: 130px;
+  background-color: green;
+  
+}
+
+#hpMeterMonster {
+  height: 15px;
+  width: 100px;
+  background-color: red;
+
+}
+
+#hero-stats {
+  width: 50%;
+  float: left;
+  background-color: antiquewhite;
+}
+
+#monster-stats {
+  text-align: right;
+  width: 50%;
+  float: left;
+  background-color: aquamarine;
+}
+
+h1 {clear: both;}

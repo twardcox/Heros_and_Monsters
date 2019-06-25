@@ -12,6 +12,14 @@ var openModalEl = document.getElementById('open-modal');
 // Display the modal
 openModalEl.addEventListener('click', function(){ 
   modalEl.style.display = 'block';
+
+  var modalMsgEl = document.getElementById('modal-message');
+
+  if (window.location.href.indexOf('combatArena') !== -1) {
+    modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
+  } else if (window.location.href.indexOf('worldHub') !== -1) {
+    modalMsgEl.innerHTML = 'Refuled and ready to go';
+  }
 });
 
 
@@ -38,5 +46,3 @@ contBtnEl.addEventListener('click', function(){
   modalEl.style.display = 'none';
   window.location.href = 'worldHub.html';
 });
-
-
