@@ -3,8 +3,9 @@ var testClass = ['attack', 'skill 1', 'skill 2', 'skill 3'];
 
 
 // Hero Constructor
-function Hero(name, hp, mp, hClass,kc,imgPath){
+function Hero(name, maxArr, hp, mp, hClass,kc,imgPath){
   this.Name = name;
+  this.Max = maxArr;
   this.Hp = hp;
   this.Mp = mp;
   this.hClass = hClass;
@@ -13,7 +14,7 @@ function Hero(name, hp, mp, hClass,kc,imgPath){
 }
 
 
-//TODO: add a function that will reset hero hp,mp
+//DONE: add a function that will reset hero hp,mp
 /*
 @func: heroRest
 @param: heroObj
@@ -22,13 +23,13 @@ function Hero(name, hp, mp, hClass,kc,imgPath){
   Should display a message upon completion and redraw hero stats.
 */
 function heroRest(heroObj){
-  heroObj.Hp = 100;
-  heroObj.Mp = 100;
+  heroObj.Hp = heroObj.Max[0];
+  heroObj.Mp = heroObj.Max[1];
   heroSave(heroObj);
 }
 
 
-//TODO: add a function that will save hero data to local storage
+//DONE: add a function that will save hero data to local storage
 /*
 @func: heroSave
 @param: heroObj
@@ -40,7 +41,7 @@ function heroSave(heroObj){
   localStorage.setItem(heroObj.Name,dataStr);
 }
 
-//TODO: add a function that will load hero data from local storage
+//DONE: add a function that will load hero data from local storage
 /*
 @func: heroLoad
 @param: heroName
@@ -50,7 +51,7 @@ function heroSave(heroObj){
 function heroLoad(heroName){
   var dataStr = localStorage.getItem(heroName);
   dataStr = JSON.parse(dataStr);
-  var tempHero = new Hero(dataStr['Name'], dataStr['Hp'], dataStr['Mp'], dataStr['hClass'], dataStr['killCount'], dataStr['imgPath']);
+  var tempHero = new Hero(dataStr['Name'], dataStr['Max'], dataStr['Hp'], dataStr['Mp'], dataStr['hClass'], dataStr['killCount'], dataStr['imgPath']);
   return tempHero;
 }
 
