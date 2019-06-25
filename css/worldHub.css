@@ -39,13 +39,7 @@ main > section:last-child > article {
 
 }
 
-button {
-    font-size: 2em;
-    color: white;
-    background-color: blue;
-    padding: 1.5vw;
-    margin: 1vw;
-}
+
 
 h3 {
     font-size: 1.5em;
