@@ -2,12 +2,24 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #282D30;
+  font-family: 'Bangers', cursive;
+}
+
+h1 {
+  font-size: 50px;
+  color: #0559AD;
+}
+
+
 body {
+  background-image: url("/img/background.jpg");
+  background-size: cover;
   width: 95%;
   margin: auto;
-  background-color: rgb(245, 245, 245);
-  font-family: fantasy;
-  color: rgb(49, 49, 49);
+  font-family: 'Montserrat', sans-serif;
+  color:#282D30;;
 }
 
 header {
@@ -22,21 +34,18 @@ ul {
   list-style: none;
 }
 
-
 button {
-    font-size: 2em;
-    color: white;
-    background-color: blue;
-    padding: 1.5vw;
-    margin: 1vw;
-    border-radius: 15px;
+  color: #ffffff;
+  font-family: 'Bangers', cursive;
+  background-color: #AA1113; 
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 10px 20px;
+  margin: 10px; 
 }
 
-input[type=button]{
-  font-size: 2em;
-    color: white;
-    background-color: blue;
-    padding: 1.5vw;
-    margin: 1vw;
-    border-radius: 15px;
+button:hover {
+  color: #FFD100;
+  background-color: #991A1C; 
+
 }
