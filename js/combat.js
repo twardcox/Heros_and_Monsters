@@ -1,6 +1,30 @@
 // This file will hold all logic for the combatArena HTML page.
+//
+var testHero = new Hero('test',[100, 100], 100, 100, 'test100', 0, '');
+var testMonster = new Monster('testmon',[100, 100], 100, 100, '');
+heroSave(testHero);
+monsterSave(testMonster);
+//
 
-// TODO: Form event handler required.
+var ourName = localStorage.getItem('name');
+var ourHero = heroLoad(ourName);
+var ourMonster = monsterLoad('testmon');
+//DONE: create on click function for 4 buttons
+var buttonEl = document.getElementById('action1');
+buttonEl.textContent = 'test1';
+buttonEl.onclick = combat;
+buttonEl = document.getElementById('action2');
+buttonEl.textContent = 'test2';
+buttonEl.onclick = combat;
+buttonEl = document.getElementById('action3');
+buttonEl.textContent = 'test3';
+buttonEl.onclick = combat;
+buttonEl = document.getElementById('action4');
+buttonEl.textContent = 'test4';
+buttonEl.onclick = combat;
+var heroHpBar = document.getElementById('heroHpMeter');
+var monHpBar = document.getElementById('monHpMeter');
+
 
 // TODO: complete the function to hadle combat logic.
 /*
@@ -13,15 +37,30 @@
 */
 //NOTE: This function might be the event listener or the function call
 // for the listener(24 Jun. 2019)
-function combat(heroObj, monsterObj) {
-  monsterObj.Hp -= heroAttack('addlater');
-  heroObj.Hp -= monsterAttack('addLater');
-  heroSave(heroObj);
-  monsterSave(monsterObj);
-  //TODO: add logic for Hp===0.
+function combat() {
+  ourMonster.Hp -= heroAttack('addlater');
+  setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+  if (ourMonster.Hp <= 0){
+    return 0;// MONSTER DEFEATED
+  }
+  ourHero.Hp -= monsterAttack('addLater');
+  setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
+  if (ourHero.Hp <= 0){
+    return 1;//HERO DEFEATED
+  }
+  heroSave(ourHero);
+  monsterSave(ourMonster);
+
+  //DONE: add logic for Hp===0.
+
 }
 
+
 //TODO: add a function to calculate the hero damage
+
+
+//TODO:INPROGRESS: add a function to calculate the hero damage
+
 /*
 @func: heroAttack
 @param: ability - (string), target - monster object
@@ -35,7 +74,7 @@ function heroAttack(ability, target) {
   return damage;
 }
 
-//TODO: add a function that will calculate monster attack damage.
+//TODO:INPROGRESS add a function that will calculate monster attack damage.
 /*
 @func: monsterAttack
 @param: ability - (string), target - hero object
@@ -50,6 +89,7 @@ function monsterAttack(ability, target) {
   return damage;
 }
 
+
 // generates a percentage for modifying the width of a status bar.
 var setMeter = function(elId, currentScore, maxScore) {
   var childEl = document.getElementById(elId);
@@ -63,8 +103,9 @@ var setMeter = function(elId, currentScore, maxScore) {
   childEl.style.width = `${currWidth}px`;
 };
 
-setMeter('hpMeter', 100, 350);
+
 
 // TODO: Create a function that displays hero stats.
 
 // TODO: Create a function that displays monster stats.
+

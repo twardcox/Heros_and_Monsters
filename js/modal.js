@@ -3,6 +3,8 @@
 // Get the element of the modal container
 var modalEl = document.getElementById('modal-container');
 
+// location of hero DATA
+var charName = localStorage.getItem('name');
 // OPEN THE MODAL
 
 // Get the element of the open modal button
@@ -19,6 +21,10 @@ openModalEl.addEventListener('click', function(){
     modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
   } else if (window.location.href.indexOf('worldHub') !== -1) {
     modalMsgEl.innerHTML = 'Refuled and ready to go';
+    var tempHero = heroLoad(charName);
+    heroRest(tempHero);
+    console.log(tempHero);
+    heroSave(tempHero);
   }
 });
 
