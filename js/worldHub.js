@@ -13,8 +13,8 @@ var kcEl = document.getElementById('kill-count');
 
 
 // DONE: Create a function that displays hero data. (HTML Structure required)
-setMeter('hpMeter', ourHero.Hp, ourHero.Max[0]);
-setMeter('mpMeter', ourHero.Mp, ourHero.Max[1]);
+setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
+setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
 kcEl.textContent = ourHero.killCount;
 
 
