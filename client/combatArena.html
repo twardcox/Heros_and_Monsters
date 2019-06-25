@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/combat.css" />
     <link rel="stylesheet" href="../css/modal.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat&display=swap" rel="stylesheet">
     <title>Let's get ready to RUMMBLE!</title>
   </head>
   <body>
@@ -23,13 +24,14 @@
             Hero stats
             <ul>
               <li>
-                <div class="outerMeter"><div id="hpMeter"></div></div>
+                <div class="outerMeter"><div id="heroHpMeter"></div></div>
               </li>
               <li>
-                <div class="outerMeter"><div id="mpMeter"></div></div>
+                <div class="outerMeter"><div id="heroMpMeter"></div></div>
               </li>
             </ul>
           </div>
+
           <div id="monster-stats">
             Monster stats
             <ul>
@@ -37,6 +39,14 @@
                 <div class="outerMeter"><div id="hpMeter"></div></div>
               </li>
             </ul>
+
+          <div id="monster-stats">Monster stats
+              <ul>
+                  <li>
+                    <div class="outerMeter"><div id="monHpMeter"></div></div>
+                  </li>
+                </ul>
+
           </div>
         </div>
         <h1>h1 Put 'em up!</h1>
@@ -46,10 +56,10 @@
         </div>
         <div id="attack-actions">
           <ul>
-            <li><button>Action 1</button></li>
-            <li><button>Action 2</button></li>
-            <li><button>Action 3</button></li>
-            <li><button>Action 4</button></li>
+            <li><button id='action1'>Action 1</button></li>
+            <li><button id='action2'>Action 2</button></li>
+            <li><button id='action3'>Action 3</button></li>
+            <li><button id='action4'>Action 4</button></li>
           </ul>
         </div>
       </main>
@@ -70,20 +80,7 @@
     <script src="../js/global.js"></script>
     <script src="../js/hero.js"></script>
     <script src="../js/monster.js"></script>
+    <script src="../js/combat.js"></script>
     <script src="../js/modal.js"></script>
-    <script>
-      // generates a percentage for modifying the width of a status bar.
-      var setMeter = function(elId, currentScore, maxScore) {
-        var childEl = document.getElementById(elId);
-        console.log('childEl: ', childEl);
-        var parentEl = document.getElementById(elId).parentElement;
-        console.log('parentEl: ', parentEl);
-        var maxWidth = parentEl.style.width;
-        console.log('maxWidth: ', maxWidth);
-        var currWidth = (maxScore / maxWidth) * currentScore;
-        console.log('currWidth: ', currWidth);
-        childEl.style.width = currWidth;
-      };
-    </script>
   </body>
 </html>
