@@ -26,13 +26,20 @@ openModalEl.addEventListener('click', function(){
     heroRest(tempHero);
     console.log(tempHero);
     heroSave(tempHero);
+    setMeter('hpMeter', 100, 100);
+    setMeter('mpMeter', 100, 100);
   }
 });
 
-function battleResult(){
+function battleResult(whoWon){
   modalEl.style.display = 'block';
   var modalMsgEl = document.getElementById('modal-message');
-  modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
+  if(whoWon === 0) { // Hero Victory
+    modalMsgEl.innerHTML = 'You won defetead the monster!';
+  }
+  else {
+    modalMsgEl.innerHTML = 'You have been defetead...';
+  }
 }
 
 
