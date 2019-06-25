@@ -1,7 +1,8 @@
+'use strict';
 // This file will hold all logic for the combatArena HTML page.
 //
-var testHero = new Hero('test',[100, 100], 100, 100, 'test100', 0, '');
-var testMonster = new Monster('testmon',[100, 100], 100, 100, '');
+var testHero = new Hero('test', [100, 100], 100, 100, 'test100', 0, '');
+var testMonster = new Monster('testmon', [100, 100], 100, 100, '');
 heroSave(testHero);
 monsterSave(testMonster);
 //
@@ -9,24 +10,29 @@ monsterSave(testMonster);
 var ourName = localStorage.getItem('name');
 var ourHero = heroLoad(ourName);
 var ourMonster = monsterLoad('testmon');
+
+setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
+
 //DONE: create on click function for 4 buttons
 var buttonEl = document.getElementById('action1');
 buttonEl.textContent = 'test1';
 buttonEl.onclick = combat;
+
 buttonEl = document.getElementById('action2');
 buttonEl.textContent = 'test2';
 buttonEl.onclick = combat;
+
 buttonEl = document.getElementById('action3');
 buttonEl.textContent = 'test3';
 buttonEl.onclick = combat;
+
 buttonEl = document.getElementById('action4');
 buttonEl.textContent = 'test4';
 buttonEl.onclick = combat;
-var heroHpBar = document.getElementById('heroHpMeter');
-var monHpBar = document.getElementById('monHpMeter');
 
+// DONE: complete the function to hadle combat logic.
 
-// TODO: complete the function to hadle combat logic.
 /*
 @func: combat
 @param: heroObj - our hero, monsterObj - monster
@@ -39,25 +45,20 @@ var monHpBar = document.getElementById('monHpMeter');
 // for the listener(24 Jun. 2019)
 function combat() {
   ourMonster.Hp -= heroAttack('addlater');
+
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   if (ourMonster.Hp <= 0){
-   battleResult();
+    ourHero.killCount++;
+    battleResult(0);
   }
   ourHero.Hp -= monsterAttack('addLater');
   setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
   if (ourHero.Hp <= 0){
-    battleResult();
+    battleResult(1);
   }
   heroSave(ourHero);
   monsterSave(ourMonster);
-
-  //DONE: add logic for Hp===0.
-
 }
-
-
-//TODO: add a function to calculate the hero damage
-
 
 //TODO:INPROGRESS: add a function to calculate the hero damage
 
@@ -89,23 +90,19 @@ function monsterAttack(ability, target) {
   return damage;
 }
 
-
 // generates a percentage for modifying the width of a status bar.
-var setMeter = function(elId, currentScore, maxScore) {
+function setMeter(elId, currentScore, maxScore) {
   var childEl = document.getElementById(elId);
 
   var parentEl = childEl.parentElement;
 
   var maxWidth = parentEl.offsetWidth;
 
+  if(currentScore < 0){
+    currentScore = 0;
+  }
+
   var currWidth = (maxWidth / maxScore) * currentScore;
 
   childEl.style.width = `${currWidth}px`;
-};
-
-
-
-// TODO: Create a function that displays hero stats.
-
-// TODO: Create a function that displays monster stats.
-
+}
