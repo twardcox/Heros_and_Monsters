@@ -7,7 +7,7 @@
 
 }
 
-#hpMeter {
+#heroHpMeter {
   height: 15px;
   width: 100px;
   background-color: green;
@@ -21,7 +21,7 @@
   
 }
 
-#hpMeterMonster {
+#monHpMeter{
   height: 15px;
   width: 100px;
   background-color: red;
