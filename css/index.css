@@ -6,29 +6,42 @@ p {
 img {
     display: block;
     margin:auto;
-    border-radius: 200px;
-    border: 2px solid black;
+    border-radius: 250px;
+    border: 10px solid #FFD100;
 }
 
 input {
-    display: inline;
-    min-width: 25vw;
-    min-height: 5vh;
+    text-align: center;
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
+input[type=text] {
+    border: 2px solid rgb(143, 143, 143);
+    border-radius: 4px;
+  }
+
+form {text-align: center;}
 
 
-
-label { float: left;
-    width: 20vw;
-    margin-right: 1vw;
-    font-size: 2em;
+label { 
+    text-align: center;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
 }
 
 main > section {
 
     margin: 5vh;
-    padding: 4vh;
     align-content:center;
 }
+
+.homepage-title h1 {
+    font-size: 70px;
+    margin-bottom: 0px;
+  }
+  
+  .homepage-title h2 {
+    margin-top: 10px;
+  }

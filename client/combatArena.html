@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,42 +18,32 @@
           <li><a href="./worldHub.html">Battle</a></li>
         </ul>
       </nav>
+    </header>
 
       <main>
         <div id="stats-header">
           <div id="hero-stats">
-            Hero stats
             <ul>
-              <li>
+              <li>HP: 
                 <div class="outerMeter"><div id="heroHpMeter"></div></div>
               </li>
-              <li>
+              <li>MP: 
                 <div class="outerMeter"><div id="heroMpMeter"></div></div>
               </li>
             </ul>
           </div>
-
           <div id="monster-stats">
-            Monster stats
             <ul>
-              <li>
-                <div class="outerMeter"><div id="hpMeter"></div></div>
-              </li>
-            </ul>
-
-          <div id="monster-stats">Monster stats
-              <ul>
-                  <li>
-                    <div class="outerMeter"><div id="monHpMeter"></div></div>
-                  </li>
-                </ul>
-
+                <li>HP: 
+                  <div class="outerMeter"><div id="monHpMeter"></div></div>
+                </li>
+              </ul>
           </div>
         </div>
         <h1>h1 Put 'em up!</h1>
         <div id="combat-arena">
-          <div id="hero-img">Hero img</div>
-          <div id="monster-imt">Monster img</div>
+            <div id="hero-img">Hero img</div>
+            <div id="monster-imt">Monster img</div>
         </div>
         <div id="attack-actions">
           <ul>
@@ -61,6 +52,7 @@
             <li><button id='action3'>Action 3</button></li>
             <li><button id='action4'>Action 4</button></li>
           </ul>
+
         </div>
       </main>
 
@@ -68,6 +60,7 @@
 
       <!-- The Modal -->
       <div id="modal-container" class="modal">
+
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -75,12 +68,16 @@
           <button id="modal-continue">Continue</button>
           <button id="modal-close">Close</button>
         </div>
+  
       </div>
-    </header>
+      
+      
+    
     <script src="../js/global.js"></script>
     <script src="../js/hero.js"></script>
     <script src="../js/monster.js"></script>
     <script src="../js/combat.js"></script>
     <script src="../js/modal.js"></script>
+  
   </body>
 </html>
