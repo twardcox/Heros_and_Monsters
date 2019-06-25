@@ -10,14 +10,14 @@
 #heroHpMeter {
   height: 15px;
   width: 100px;
-  background-color: green;
+  background-color:#0559AD;
 
 }
 
 #mpMeter {
   height: 15px;
   width: 130px;
-  background-color: green;
+  background-color: #0559AD;
   
 }
 
@@ -31,14 +31,23 @@
 #hero-stats {
   width: 50%;
   float: left;
-  background-color: antiquewhite;
 }
 
 #monster-stats {
   text-align: right;
   width: 50%;
   float: left;
-  background-color: aquamarine;
 }
 
+#monster-stats ul {float: right;}
+
 h1 {clear: both;}
+
+ul {
+  padding-left: 0;
+  text-align: center;
+}
+
+li {
+  display: inline;
+}

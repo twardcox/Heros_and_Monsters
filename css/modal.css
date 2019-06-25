@@ -14,6 +14,8 @@
 
 /* Modal Content/Box */
 .modal-content {
+  font-size: 18px;
+  text-align: center;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
@@ -27,3 +29,19 @@
   display: none; 
 }
 
+
+.modal-content button {
+  color: #282D30;
+  font-family: 'Bangers', cursive;
+  background-color: #FFDD45; 
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 10px 20px;
+  margin: 10px; 
+}
+
+.modal-content button:hover {
+  color: #000000;
+  background-color: #FFD100; 
+
+}
