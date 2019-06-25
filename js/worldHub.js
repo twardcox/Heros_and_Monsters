@@ -30,7 +30,6 @@ battleBtnEl.addEventListener('click', function() {
 
 // generates a percentage for modifying the width of a status bar.
 function setMeter(elId, currentScore, maxScore) {
-  console.log('here in setmeter');
   var childEl = document.getElementById(elId);
 
   var parentEl = childEl.parentElement;

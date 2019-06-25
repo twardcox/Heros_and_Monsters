@@ -91,7 +91,7 @@ function monsterAttack(ability, target) {
 }
 
 // generates a percentage for modifying the width of a status bar.
-var setMeter = function(elId, currentScore, maxScore) {
+function setMeter(elId, currentScore, maxScore) {
   var childEl = document.getElementById(elId);
 
   var parentEl = childEl.parentElement;
@@ -105,4 +105,4 @@ var setMeter = function(elId, currentScore, maxScore) {
   var currWidth = (maxWidth / maxScore) * currentScore;
 
   childEl.style.width = `${currWidth}px`;
-};
+}
