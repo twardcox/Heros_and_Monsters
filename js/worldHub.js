@@ -3,7 +3,7 @@
 
 
 
-// TODO: Create a listener for clicking on element that will rest hero.
+// DONE(IN MODAL.JS): Create a listener for clicking on element that will rest hero.
 
 
 // TODO: Create a function that displays hero data. (HTML Structure required)
