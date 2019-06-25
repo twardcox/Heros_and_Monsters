@@ -6,7 +6,8 @@ heroSave(testHero);
 monsterSave(testMonster);
 //
 
-var ourHero = heroLoad('test');
+var ourName = localStorage.getItem('name');
+var ourHero = heroLoad(ourName);
 var ourMonster = monsterLoad('testmon');
 //DONE: create on click function for 4 buttons
 var buttonEl = document.getElementById('action1');
@@ -38,12 +39,12 @@ var monHpBar = document.getElementById('monHpMeter');
 // for the listener(24 Jun. 2019)
 function combat() {
   ourMonster.Hp -= heroAttack('addlater');
-  monHpBar.style.width = ourMonster.Hp + 'px';
+  setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   if (ourMonster.Hp <= 0){
     return 0;// MONSTER DEFEATED
   }
   ourHero.Hp -= monsterAttack('addLater');
-  heroHpBar.style.width = ourHero.Hp + 'px';
+  setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
   if (ourHero.Hp <= 0){
     return 1;//HERO DEFEATED
   }
@@ -97,12 +98,12 @@ var setMeter = function(elId, currentScore, maxScore) {
 
   var maxWidth = parentEl.offsetWidth;
 
-  var currWidth = (maxScore / maxWidth) * currentScore;
+  var currWidth = (maxWidth / maxScore) * currentScore;
 
   childEl.style.width = `${currWidth}px`;
 };
 
-setMeter('hpMeter', 100, 350);
+
 
 // TODO: Create a function that displays hero stats.
 
