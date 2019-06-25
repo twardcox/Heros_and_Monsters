@@ -34,16 +34,42 @@ body {
   color:#282D30;;
 }
 
-header {
-  border-bottom: 3px solid #353434;
-  height: 150;
-  padding: 2vh;
-  width: 100%;
-  position: relative;
-}
-
 ul {
   list-style: none;
+  padding: 0;  
+}
+
+li {
+    display: inline;
+}
+
+.outerMeter {
+   margin: 2vw 0;
+    background-color: darkgray;
+    width: 350px;
+    height: 35px;
+
+}
+
+#heroHpMeter {
+    height: 35px;
+    width: 250px;
+    background-color: #0559AD;
+
+}
+
+#heroMpMeter {
+    height: 35px;
+    width: 250px;
+    background-color: #0559AD;
+    
+}
+
+#monHpMeter {
+    height: 35px;
+    width: 250px;
+    background-color: red;
+
 }
 
 button, input[type=button] {
