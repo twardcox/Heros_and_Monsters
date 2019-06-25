@@ -1,6 +1,20 @@
 // This file will hold all logic for the combatArena HTML page.
+//
+var testHero = new Hero('test',100, 100, 'test100', 0, '');
+var testMonster = new Monster('testmon', 100, 100, '');
+heroSave(testHero);
+monsterSave(testMonster);
+//
 
-// TODO: Form event handler required.
+var ourHero = heroLoad('test');
+var ourMonster = monsterLoad('testmon');
+//TODO: create on click function for 4 buttons
+var buttonEl = document.getElementById('action1');
+buttonEl.textContent = 'test1';
+buttonEl.onclick = combat;
+var heroHpBar = document.getElementById('heroHpMeter');
+var monHpBar = document.getElementById('monHpMeter');
+
 
 // TODO: complete the function to hadle combat logic.
 /*
@@ -13,12 +27,22 @@
 */
 //NOTE: This function might be the event listener or the function call
 // for the listener(24 Jun. 2019)
-function combat(heroObj, monsterObj) {
-  monsterObj.Hp -= heroAttack('addlater');
-  heroObj.Hp -= monsterAttack('addLater');
-  heroSave(heroObj);
-  monsterSave(monsterObj);
-  //TODO: add logic for Hp===0.
+function combat() {
+  ourMonster.Hp -= heroAttack('addlater');
+  monHpBar.style.width = ourMonster.Hp + 'px';
+  if (ourMonster.Hp <= 0){
+    return 0;
+  }
+  ourHero.Hp -= monsterAttack('addLater');
+  heroHpBar.style.width = ourHero.Hp + 'px';
+  if (ourHero.Hp <= 0){
+    return 1;
+  }
+  heroSave(ourHero);
+  monsterSave(ourMonster);
+
+  //DONE: add logic for Hp===0.
+
 }
 
 
