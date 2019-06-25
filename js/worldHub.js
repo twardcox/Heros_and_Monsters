@@ -9,3 +9,12 @@
 // TODO: Create a function that displays hero data. (HTML Structure required)
 
 
+// BUTTON TO START BATTLE
+
+// Get the element of the battle button
+var battleBtnEl = document.getElementById('start-battle');
+
+// Go to the combat pate
+battleBtnEl.addEventListener('click', function(){
+  window.location.href = 'combatArena.html';
+});
