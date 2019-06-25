@@ -58,7 +58,7 @@ var setMeter = function(elId, currentScore, maxScore) {
 
   var maxWidth = parentEl.offsetWidth;
 
-  var currWidth = (maxScore / maxWidth) * currentScore;
+  var currWidth = (maxWidth / maxScore) * currentScore;
 
   childEl.style.width = `${currWidth}px`;
 };
