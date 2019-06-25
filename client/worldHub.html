@@ -7,27 +7,22 @@
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/worldHub.css" />
     <link rel="stylesheet" href="../css/modal.css" />
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat:400,700&display=swap" rel="stylesheet" />
     <title>Choose your fate.</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./combatArena.html">Let's do battle</a></li>
-        </ul>
-      </nav>
-    </header>
     <h1>Welcome <span id="backTag">back </span><span id="nameTag">Bill</span></h1>
     <main>
       <section>
         <img src="../img/hero1.jpg" alt="We are the hero's of our own stories" />
         <article>
           <ul>
-            <li><strong>HP: </strong>
+            <li>
+              <strong>HP: </strong>
               <div class="outerMeter"><div id="hpMeter"></div></div>
             </li>
-            <li><strong>MP:</strong>
+            <li>
+              <strong>MP:</strong>
               <div class="outerMeter"><div id="mpMeter"></div></div>
             </li>
           </ul>
@@ -53,26 +48,7 @@
     </div>
 
     <script src="../js/modal.js"></script>
-<<<<<<< HEAD
-=======
     <script src="../js/worldHub.js"></script>
     <script src="../js/hero.js"></script>
-    <script>
-      // generates a percentage for modifying the width of a status bar.
-      var setMeter = function(elId, currentScore, maxScore) {
-        var childEl = document.getElementById(elId);
-
-        var parentEl = childEl.parentElement;
-
-        var maxWidth = parentEl.offsetWidth;
-
-        var currWidth = (maxScore / maxWidth) * currentScore;
-
-        childEl.style.width = `${currWidth}px`;
-      };
-
-      setMeter('hpMeter', 100, 350);
-    </script>
->>>>>>> f97671d84a8fee13ff422e42828b98bba1df7612
   </body>
 </html>
