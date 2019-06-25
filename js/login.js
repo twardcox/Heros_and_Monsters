@@ -16,6 +16,7 @@ function begin() {
     var tempHero = new Hero(charName, [100, 100], 100, 100, '', 0, '');
     heroSave(tempHero);
   }
+  window.location.href = './client/worldHub.html';
 }
 
 // TODO: Add a function to check for existing hero in local storage by name.

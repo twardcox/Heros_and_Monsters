@@ -38,14 +38,15 @@ var monHpBar = document.getElementById('monHpMeter');
 // for the listener(24 Jun. 2019)
 function combat() {
   ourMonster.Hp -= heroAttack('addlater');
-  setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
-  if (ourMonster.Hp <= 0) {
-    return 0; // MONSTER DEFEATED
+
+  setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+  if (ourMonster.Hp <= 0){
+   battleResult();
   }
   ourHero.Hp -= monsterAttack('addLater');
-  setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
-  if (ourHero.Hp <= 0) {
-    return 1; //HERO DEFEATED
+  setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
+  if (ourHero.Hp <= 0){
+    battleResult();
   }
   heroSave(ourHero);
   monsterSave(ourMonster);
