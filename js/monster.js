@@ -1,5 +1,6 @@
+'use strict';
 // Monster Constructor
-function Monster(name, maxArr, hp, mp, imgPath){
+function Monster(name, maxArr, hp, mp, imgPath) {
   this.Name = name;
   this.Max = maxArr;
   this.Hp = hp;
@@ -7,19 +8,16 @@ function Monster(name, maxArr, hp, mp, imgPath){
   this.imgPath = imgPath;
 }
 
-// DONE: Add a function to save monster data to local storage
+// save monster data to local storage
 function monsterSave(monsterObj) {
-var data = JSON.stringify(monsterObj);
-localStorage.setItem(monsterObj.Name,data);
+  var data = JSON.stringify(monsterObj);
+  localStorage.setItem(monsterObj.Name, data);
 }
 
-// DONE: Add a function to load monster data from local storage.
+// load monster data from local storage.
 function monsterLoad(monsterName) {
   var dataStr = localStorage.getItem(monsterName);
   dataStr = JSON.parse(dataStr);
-  var tempMonster = new Monster(dataStr['Name'], dataStr['Max'], dataStr['Hp'], dataStr['Mp'],dataStr['imgPath']);
+  var tempMonster = new Monster(dataStr['Name'], dataStr['Max'], dataStr['Hp'], dataStr['Mp'], dataStr['imgPath']);
   return tempMonster;
 }
-
-
-
