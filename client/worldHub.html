@@ -43,17 +43,31 @@
 
     <!-- The Modal -->
     <div id="modal-container" class="modal">
-
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
         <p id="modal-message"></p>
         <button id="modal-close">Continue</button>
       </div>
-
     </div>
 
     <script src="../js/hero.js"></script>
     <script src="../js/modal.js"></script>
+    <script>
+      // generates a percentage for modifying the width of a status bar.
+      var setMeter = function(elId, currentScore, maxScore) {
+        var childEl = document.getElementById(elId);
+
+        var parentEl = childEl.parentElement;
+
+        var maxWidth = parentEl.offsetWidth;
+
+        var currWidth = (maxScore / maxWidth) * currentScore;
+
+        childEl.style.width = `${currWidth}px`;
+      };
+
+      setMeter('hpMeter', 100, 350);
+    </script>
   </body>
 </html>

@@ -21,7 +21,6 @@ function combat(heroObj, monsterObj) {
   //TODO: add logic for Hp===0.
 }
 
-
 //TODO: add a function to calculate the hero damage
 /*
 @func: heroAttack
@@ -51,6 +50,21 @@ function monsterAttack(ability, target) {
   return damage;
 }
 
+// generates a percentage for modifying the width of a status bar.
+var setMeter = function(elId, currentScore, maxScore) {
+  var childEl = document.getElementById(elId);
+
+  var parentEl = childEl.parentElement;
+
+  var maxWidth = parentEl.offsetWidth;
+
+  var currWidth = (maxScore / maxWidth) * currentScore;
+
+  childEl.style.width = `${currWidth}px`;
+};
+
+setMeter('hpMeter', 100, 350);
+
 // TODO: Create a function that displays hero stats.
 
-// TODO: Create a function that displays monster stats. 
+// TODO: Create a function that displays monster stats.

@@ -71,19 +71,5 @@
     <script src="../js/hero.js"></script>
     <script src="../js/monster.js"></script>
     <script src="../js/modal.js"></script>
-    <script>
-      // generates a percentage for modifying the width of a status bar.
-      var setMeter = function(elId, currentScore, maxScore) {
-        var childEl = document.getElementById(elId);
-        console.log('childEl: ', childEl);
-        var parentEl = document.getElementById(elId).parentElement;
-        console.log('parentEl: ', parentEl);
-        var maxWidth = parentEl.style.width;
-        console.log('maxWidth: ', maxWidth);
-        var currWidth = (maxScore / maxWidth) * currentScore;
-        console.log('currWidth: ', currWidth);
-        childEl.style.width = currWidth;
-      };
-    </script>
   </body>
 </html>
