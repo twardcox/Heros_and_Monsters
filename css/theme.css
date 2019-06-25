@@ -21,3 +21,22 @@ header {
 ul {
   list-style: none;
 }
+
+
+button {
+    font-size: 2em;
+    color: white;
+    background-color: blue;
+    padding: 1.5vw;
+    margin: 1vw;
+    border-radius: 15px;
+}
+
+input[type=button]{
+  font-size: 2em;
+    color: white;
+    background-color: blue;
+    padding: 1.5vw;
+    margin: 1vw;
+    border-radius: 15px;
+}
