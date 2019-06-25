@@ -41,12 +41,12 @@ function combat() {
   ourMonster.Hp -= heroAttack('addlater');
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   if (ourMonster.Hp <= 0){
-    return 0;// MONSTER DEFEATED
+   battleResult();
   }
   ourHero.Hp -= monsterAttack('addLater');
   setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
   if (ourHero.Hp <= 0){
-    return 1;//HERO DEFEATED
+    battleResult();
   }
   heroSave(ourHero);
   monsterSave(ourMonster);

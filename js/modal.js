@@ -17,9 +17,10 @@ openModalEl.addEventListener('click', function(){
 
   var modalMsgEl = document.getElementById('modal-message');
 
-  if (window.location.href.indexOf('combatArena') !== -1) {
-    modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
-  } else if (window.location.href.indexOf('worldHub') !== -1) {
+  // if (window.location.href.indexOf('combatArena') !== -1) {
+  //   modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
+  // } else 
+  if (window.location.href.indexOf('worldHub') !== -1) {
     modalMsgEl.innerHTML = 'Refuled and ready to go';
     var tempHero = heroLoad(charName);
     heroRest(tempHero);
@@ -27,6 +28,12 @@ openModalEl.addEventListener('click', function(){
     heroSave(tempHero);
   }
 });
+
+function battleResult(){
+  modalEl.style.display = 'block';
+  var modalMsgEl = document.getElementById('modal-message');
+  modalMsgEl.innerHTML = 'You won or lost! (Need to add logic)';
+}
 
 
 

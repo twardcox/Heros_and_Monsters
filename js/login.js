@@ -17,6 +17,7 @@ function begin(){
     var tempHero = new Hero(charName, [100, 100], 100, 100, '', 0, '');
     heroSave(tempHero);
   }
+  window.location.href = './client/worldHub.html';
 }
 
 
