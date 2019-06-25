@@ -1,3 +1,4 @@
+'use strict';
 // This file will hold logic for the worldHub HTLM page such as
 //  Event listeners, form logic, ect...
 
@@ -23,7 +24,7 @@ kcEl.textContent = ourHero.killCount;
 var battleBtnEl = document.getElementById('start-battle');
 
 // Go to the combat pate
-battleBtnEl.addEventListener('click', function(){
+battleBtnEl.addEventListener('click', function() {
   window.location.href = 'combatArena.html';
 });
 

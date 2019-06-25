@@ -1,7 +1,8 @@
+'use strict';
 // This file will hold all logic for the combatArena HTML page.
 //
-var testHero = new Hero('test',[100, 100], 100, 100, 'test100', 0, '');
-var testMonster = new Monster('testmon',[100, 100], 100, 100, '');
+var testHero = new Hero('test', [100, 100], 100, 100, 'test100', 0, '');
+var testMonster = new Monster('testmon', [100, 100], 100, 100, '');
 heroSave(testHero);
 monsterSave(testMonster);
 //
@@ -9,6 +10,7 @@ monsterSave(testMonster);
 var ourName = localStorage.getItem('name');
 var ourHero = heroLoad(ourName);
 var ourMonster = monsterLoad('testmon');
+
 setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
 setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
 
@@ -29,8 +31,8 @@ buttonEl = document.getElementById('action4');
 buttonEl.textContent = 'test4';
 buttonEl.onclick = combat;
 
-
 // DONE: complete the function to hadle combat logic.
+
 /*
 @func: combat
 @param: heroObj - our hero, monsterObj - monster
@@ -43,6 +45,7 @@ buttonEl.onclick = combat;
 // for the listener(24 Jun. 2019)
 function combat() {
   ourMonster.Hp -= heroAttack('addlater');
+
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   if (ourMonster.Hp <= 0){
     ourHero.killCount++;
@@ -86,7 +89,6 @@ function monsterAttack(ability, target) {
   damage = Math.random() * 15;
   return damage;
 }
-
 
 // generates a percentage for modifying the width of a status bar.
 var setMeter = function(elId, currentScore, maxScore) {

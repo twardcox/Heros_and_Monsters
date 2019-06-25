@@ -1,3 +1,4 @@
+'use strict';
 // https://www.w3schools.com/howto/howto_css_modals.asp
 
 // Get the element of the modal container
@@ -12,7 +13,7 @@ var charName = localStorage.getItem('name');
 var openModalEl = document.getElementById('open-modal');
 
 // Display the modal
-openModalEl.addEventListener('click', function(){ 
+openModalEl.addEventListener('click', function() {
   modalEl.style.display = 'block';
 
   var modalMsgEl = document.getElementById('modal-message');
@@ -44,17 +45,16 @@ function battleResult(whoWon){
 
 
 
+
 // CLOSE THE MODAL
 
 // Get the element of the close button
 var closeBtnEl = document.getElementById('modal-close');
 
 // Exit the modal
-closeBtnEl.addEventListener('click', function(){
+closeBtnEl.addEventListener('click', function() {
   modalEl.style.display = 'none';
 });
-
-
 
 // CONTINUE FROM THE MODAL (RETURN TO THE WORLDHUB PAGE)
 
@@ -62,7 +62,7 @@ closeBtnEl.addEventListener('click', function(){
 var contBtnEl = document.getElementById('modal-continue');
 
 // Exit the modal
-contBtnEl.addEventListener('click', function(){
+contBtnEl.addEventListener('click', function() {
   modalEl.style.display = 'none';
   window.location.href = 'worldHub.html';
 });
