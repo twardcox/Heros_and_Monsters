@@ -1,6 +1,7 @@
 // Monster Constructor
-function Monster(name, hp, mp, imgPath){
+function Monster(name, maxArr, hp, mp, imgPath){
   this.Name = name;
+  this.Max = maxArr;
   this.Hp = hp;
   this.Mp = mp;
   this.imgPath = imgPath;
@@ -12,11 +13,11 @@ var data = JSON.stringify(monsterObj);
 localStorage.setItem(monsterObj.Name,data);
 }
 
-// TODO: Add a function to load monster data from local storage.
+// DONE: Add a function to load monster data from local storage.
 function monsterLoad(monsterName) {
   var dataStr = localStorage.getItem(monsterName);
   dataStr = JSON.parse(dataStr);
-  var tempMonster = new Monster(dataStr['Name'], dataStr['Hp'], dataStr['Mp'],dataStr['imgPath']);
+  var tempMonster = new Monster(dataStr['Name'], dataStr['Max'], dataStr['Hp'], dataStr['Mp'],dataStr['imgPath']);
   return tempMonster;
 }
 
