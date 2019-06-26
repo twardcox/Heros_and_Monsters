@@ -25,33 +25,15 @@ buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
 
 buttonEl = document.getElementById('action2');
 buttonEl.textContent = ourHero.hClass.skill1[0];
-// Check if we have enough MP.
-if(ourHero.Mp > ourHero.hClass.skill1[2]){ // We do, use skill.
-  buttonEl.onclick = function () {combat(ourHero.hClass.skill1);};
-}
-else{ // We don't, use basic attack.
-  buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
-}
+buttonEl.onclick = function () {combat(ourHero.hClass.skill1);};
 
 buttonEl = document.getElementById('action3');
 buttonEl.textContent = ourHero.hClass.skill2[0];
-// Check if we have enough MP.
-if(ourHero.Mp > ourHero.hClass.skill2[2]){ // We do, use skill.
-  buttonEl.onclick = function () {combat(ourHero.hClass.skill2);};
-}
-else{ // We don't, use basic attack.
-  buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
-}
+buttonEl.onclick = function () {combat(ourHero.hClass.skill2);};
 
 buttonEl = document.getElementById('action4');
 buttonEl.textContent = ourHero.hClass.skill3[0];
-// Check if we have enough MP.
-if(ourHero.Mp > ourHero.hClass.skill3[2]){ // We do, use skill.
-  buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
-}
-else{ // We don't, use basic attack.
-  buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
-}
+buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
 
 // DONE: complete the function to hadle combat logic.
 
@@ -67,18 +49,33 @@ else{ // We don't, use basic attack.
 // for the listener(24 Jun. 2019)
 function combat(ability) {
   console.log(ability[0]);
-  ourMonster.Hp -= heroAttack(ability);
+  var logStr = '';
+  var h1El = document.getElementById('cbLog');
+  var damage = 0;
+  // Mp check
+  if(ourHero.Mp >= ability[2]) {
+    damage = heroAttack(ability);
+  }
+  else { // We don't have enough mp, use regular attack.
+    logStr += 'You didn\'t have enough MP to use ' + ability[0] + '. ';
+    damage = heroAttack(ourHero.hClass.attack);
+  }
+  ourMonster.Hp -= damage;
+  logStr += 'You delt ' + damage.toFixed(2) + ' damage.';
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
   if (ourMonster.Hp <= 0){
     ourHero.killCount++;
     battleResult(0);
   }
-  ourHero.Hp -= monsterAttack('addLater');
+  damage = monsterAttack('addLater');
+  ourHero.Hp -= damage;
+  logStr += ' The monster delt ' + damage.toFixed(2) + ' to you.';
   setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
   if (ourHero.Hp <= 0) {
     battleResult(1);
   }
+  h1El.textContent = logStr;
   heroSave(ourHero);
   monsterSave(ourMonster);
   shakeImages();

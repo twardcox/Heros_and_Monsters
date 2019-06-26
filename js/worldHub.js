@@ -9,6 +9,9 @@ var ourHero = heroLoad(charName);
 
 var kcEl = document.getElementById('kill-count');
 
+var headerEl = document.getElementById('welcomeTitle');
+headerEl.textContent = 'Welcome, ' + ourHero.Name;
+
 
 // DONE(IN MODAL.JS): Create a listener for clicking on element that will rest hero.
 
