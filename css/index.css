@@ -3,10 +3,10 @@ p {
     margin: 5vh;
 }
 
-img {
+main img {
     display: block;
     margin:auto;
-    border-radius: 250px;
+    border-radius: 200px;
     border: 10px solid #FFD100;
 }
 

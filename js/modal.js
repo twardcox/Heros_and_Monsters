@@ -36,15 +36,12 @@ function battleResult(whoWon){
   modalEl.style.display = 'block';
   var modalMsgEl = document.getElementById('modal-message');
   if(whoWon === 0) { // Hero Victory
-    modalMsgEl.innerHTML = 'You won defetead the monster!';
+    modalMsgEl.innerHTML = 'You defeated the monster!';
   }
   else {
-    modalMsgEl.innerHTML = 'You have been defetead...';
+    modalMsgEl.innerHTML = 'You have been defeated...';
   }
 }
-
-
-
 
 // CLOSE THE MODAL
 

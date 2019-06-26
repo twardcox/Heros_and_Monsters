@@ -27,3 +27,5 @@ User stories: https://github.com/heros-and-monsters/project-week/blob/dev/user-s
 - index logo royalty free from https://www.dreamstime.com/angry-gorilla-head-royal-crown-angry-gorilla-head-royal-crown-crossed-swords-vintage-monochrome-style-isolated-image139972248
 
 - sword buttons royalty free from https://www.dreamstime.com/stock-illustration-viking-helmet-three-crossed-swords-background-scandinavian-pattern-vector-illustration-eps-image93009521
+
+- hero and monster images from https://www.istockphoto.com/photos/monsterassettype=image&sort=mostpopular&mediatype=photography&phrase=monster

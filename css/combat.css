@@ -1,53 +1,62 @@
-.outerMeter {
-   
-  background-color: darkgray;
-  width: 175px;
-  height: 15px;
-  margin: 10px;
-
-}
-
-#heroHpMeter {
-  height: 15px;
-  width: 100px;
-  background-color:#0559AD;
-
-}
-
-#mpMeter {
-  height: 15px;
-  width: 130px;
-  background-color: #0559AD;
-  
-}
-
-#monHpMeter{
-  height: 15px;
-  width: 100px;
-  background-color: red;
-
-}
-
 #hero-stats {
   width: 50%;
   float: left;
 }
 
 #monster-stats {
-  text-align: right;
+  text-align: left;
   width: 50%;
   float: left;
 }
 
 #monster-stats ul {float: right;}
 
-h1 {clear: both;}
-
 ul {
   padding-left: 0;
   text-align: center;
 }
 
-li {
-  display: inline;
+#stats-header {
+
+   height: 20vw;
+   position: relative;
 }
+
+#hero-stats {
+
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+
+#monster-stats {
+
+  position:absolute;
+  top: 10%;
+  right: 0;
+}
+
+#combat-arena {
+
+  position:relative;
+  height: 30vw;
+}
+
+img {
+  width: 25vw;
+}
+
+#hero-img {
+
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+#monster-img {
+
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+

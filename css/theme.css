@@ -2,17 +2,21 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #282D30;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #282d30;
   font-family: 'Bangers', cursive;
 }
 
 h1 {
-  margin: 20px auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 50px;
-  color: #007A6E;
-  
+  color: #007a6e;
 }
 
 h2 {
@@ -20,44 +24,80 @@ h2 {
   font-size: 30px;
 }
 
+header{
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+nav {
+  text-align: left;
+}
+
+nav img {
+  border: none;
+  margin:0;
+  width: 30px;
+}
+
 strong {
   font-weight: 700;
 }
 
-
 body {
-  background-image: url("/img/background.jpg");
+  background-image: url('../img/background.jpg');
   background-size: cover;
   width: 95%;
   margin: auto;
   font-family: 'Montserrat', sans-serif;
-  color:#282D30;;
-}
-
-header {
-  border-bottom: 3px solid #353434;
-  height: 150;
-  padding: 2vh;
-  width: 100%;
-  position: relative;
+  color: #282d30;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
-button, input[type=button] {
+li {
+  display: inline;
+}
+
+.outerMeter {
+  margin: 2vw 0;
+  background-color: darkgray;
+  width: 350px;
+  height: 35px;
+}
+
+#heroHpMeter {
+  height: 35px;
+  width: 250px;
+  background-color: #0559ad;
+}
+
+#heroMpMeter {
+  height: 35px;
+  width: 250px;
+  background-color: #0559ad;
+}
+
+#monHpMeter {
+  height: 35px;
+  width: 250px;
+  background-color: red;
+}
+
+button,
+input[type='button'] {
   color: #ffffff;
   font-family: 'Bangers', cursive;
-  background-color: #AA1113; 
+  background-color: #aa1113;
   border-radius: 5px;
   font-size: 25px;
   padding: 10px 20px;
-  margin: 10px; 
+  margin: 10px;
 }
 
 button:hover {
-  color: #FFD100;
-  background-color: #991A1C; 
-
+  color: #ffd100;
+  background-color: #991a1c;
 }

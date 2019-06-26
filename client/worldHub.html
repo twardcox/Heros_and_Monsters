@@ -11,6 +11,12 @@
     <title>Choose your fate.</title>
   </head>
   <body>
+      <header>
+          <nav>
+              <a href="../index.html"><img src="../img/home.png" ></a>
+            </nav>
+      </header>
+      
     <h1>Welcome <span id="backTag">back </span><span id="nameTag">Bill</span></h1>
     <main>
       <section>
@@ -19,11 +25,11 @@
           <ul>
             <li>
               <strong>HP: </strong>
-              <div class="outerMeter"><div id="hpMeter"></div></div>
+              <div class="outerMeter"><div id="heroHpMeter"></div></div>
             </li>
             <li>
               <strong>MP:</strong>
-              <div class="outerMeter"><div id="mpMeter"></div></div>
+              <div class="outerMeter"><div id="heroMpMeter"></div></div>
             </li>
           </ul>
           <p class="battles">Battles won: <span id="kill-count">13</span></p>
@@ -47,8 +53,8 @@
       </div>
     </div>
 
-    <script src="../js/modal.js"></script>
     <script src="../js/hero.js"></script>
+    <script src="../js/modal.js"></script>
     <script src="../js/worldHub.js"></script>
   </body>
 </html>
