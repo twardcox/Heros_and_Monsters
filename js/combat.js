@@ -1,10 +1,13 @@
 'use strict';
 // This file will hold all logic for the combatArena HTML page.
 //
+var genMonInx = Math.floor(Math.random()*4);
+var monImgEl = document.getElementById('monster-img');
 
-var testMonster = new Monster('testmon', [100, 100], 100, 100, '');
+var testMonster = new Monster('testmon', [100, 100], 100, 100, monsterImgArray[genMonInx]);
 
 monsterSave(testMonster);
+monImgEl.src = testMonster.imgPath;
 //
 
 var ourName = localStorage.getItem('name');
