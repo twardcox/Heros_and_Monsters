@@ -17,7 +17,7 @@
   font-size: 18px;
   text-align: center;
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 8% auto; /* 8% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
@@ -44,4 +44,15 @@
   color: #000000;
   background-color: #FFD100; 
 
+}
+
+.modal-content img {
+  position: relative;
+  height: 150px;
+  width: auto;
+}
+
+.modal-content h2 {
+  color: #aa1113;
+  font-size: 50px;
 }
