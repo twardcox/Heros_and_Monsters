@@ -1,3 +1,4 @@
+
 'use strict';
 // This file will hold logic for the worldHub HTLM page such as
 //  Event listeners, form logic, ect...
@@ -25,7 +26,7 @@ var battleBtnEl = document.getElementById('start-battle');
 
 // Go to the combat pate
 battleBtnEl.addEventListener('click', function() {
-  window.location.href = 'https://heros-and-monsters.github.io/project-week/client/combatArena.html';
+  window.location.href = 'combatArena.html';
 });
 
 // generates a percentage for modifying the width of a status bar.
@@ -43,3 +44,4 @@ function setMeter(elId, currentScore, maxScore) {
 
   childEl.style.width = `${currWidth}px`;
 }
+
