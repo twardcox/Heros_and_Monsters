@@ -1,3 +1,4 @@
+
 'use strict';
 // This file will hold logic for the worldHub HTLM page such as
 //  Event listeners, form logic, ect...
@@ -43,3 +44,4 @@ function setMeter(elId, currentScore, maxScore) {
 
   childEl.style.width = `${currWidth}px`;
 }
+
