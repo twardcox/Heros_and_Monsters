@@ -11,8 +11,9 @@ var ourName = localStorage.getItem('name');
 var ourHero = heroLoad(ourName);
 var ourMonster = monsterLoad('testmon');
 
-setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
-setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
+setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
+setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
+setMeter('heroMpMeter', ourHero.Hp, ourHero.Max[0]);
 
 //DONE: create on click function for 4 buttons
 var buttonEl = document.getElementById('action1');
@@ -46,14 +47,14 @@ buttonEl.onclick = combat;
 function combat() {
   ourMonster.Hp -= heroAttack('addlater');
 
-  setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
-  if (ourMonster.Hp <= 0){
+  setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
+  if (ourMonster.Hp <= 0) {
     ourHero.killCount++;
     battleResult(0);
   }
   ourHero.Hp -= monsterAttack('addLater');
-  setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
-  if (ourHero.Hp <= 0){
+  setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
+  if (ourHero.Hp <= 0) {
     battleResult(1);
   }
   heroSave(ourHero);
@@ -98,7 +99,7 @@ function setMeter(elId, currentScore, maxScore) {
 
   var maxWidth = parentEl.offsetWidth;
 
-  if(currentScore < 0){
+  if (currentScore < 0) {
     currentScore = 0;
   }
 
