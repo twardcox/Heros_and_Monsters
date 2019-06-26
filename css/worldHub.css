@@ -1,50 +1,42 @@
 h1 {
-
-    text-align: center;
-    font-size: 8vw;
+  text-align: center;
+  font-size: 8vw;
 }
 
 main > section:first-child {
-
-    height: 30vw;
-    position: relative;
+  height: 30vw;
+  position: relative;
 }
 
 main > section:last-child {
-en;
-    height: 5vw;
-    position: relative;
+  height: 5vw;
+  position: relative;
 }
 
 main img {
-
-    position:absolute;
-    top: 10%;
-    left: 10%;
-    width: 30vw;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 30vw;
 }
 
 main > section > article {
-;
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    float: right;
-    width: 30vw;
-
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  float: right;
+  width: 30vw;
 }
 
 main > section:last-child > article {
-
-    position:absolute;
-    top: 20%;
-    right: 20%;
-    float: right;
-
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  float: right;
 }
 
 .battles {
-    margin-top: 2vw;
-    font-weight: 700;
-    font-size: 30px;
+  margin-top: 2vw;
+  font-weight: 700;
+  font-size: 30px;
 }
