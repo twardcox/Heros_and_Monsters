@@ -106,3 +106,32 @@ function setMeter(elId, currentScore, maxScore) {
 
   childEl.style.width = `${currWidth}px`;
 }
+
+
+// SHAKE EFFECT
+// https://www.w3schools.com/howto/howto_css_shake_image.asp
+
+var shakeBtnEl = document.getElementById('shake-btn');
+shakeBtnEl.addEventListener('click', handleFormSubmit);
+
+function handleFormSubmit() {
+
+  // SHAKE THE HERO
+  var heroToShakeEl = document.getElementById('hero-img');
+  heroToShakeEl.className = 'shakeEffect';
+
+  heroToShakeEl.addEventListener('webkitAnimationEnd', function(){
+    if(heroToShakeEl.className === 'shakeEffect')
+      heroToShakeEl.className = '';
+  });
+
+  // SHAKE THE MONSTER
+
+  var monsterToShakeEl = document.getElementById('monster-img');
+  monsterToShakeEl.className = 'shake2Effect';
+  monsterToShakeEl.addEventListener('webkitAnimationEnd', function(){
+    if(monsterToShakeEl.className === 'shake2Effect')
+      monsterToShakeEl.className = '';
+  });
+
+}
