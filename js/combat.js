@@ -1,9 +1,9 @@
 'use strict';
 // This file will hold all logic for the combatArena HTML page.
 //
-var testHero = new Hero('test', [100, 100], 100, 100, 'test100', 0, '');
+
 var testMonster = new Monster('testmon', [100, 100], 100, 100, '');
-heroSave(testHero);
+
 monsterSave(testMonster);
 //
 
@@ -16,20 +16,20 @@ setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
 
 //DONE: create on click function for 4 buttons
 var buttonEl = document.getElementById('action1');
-buttonEl.textContent = 'test1';
-buttonEl.onclick = combat;
+buttonEl.textContent = ourHero.hClass.attack[0];
+buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
 
 buttonEl = document.getElementById('action2');
-buttonEl.textContent = 'test2';
-buttonEl.onclick = combat;
+buttonEl.textContent = ourHero.hClass.skill1[0];
+buttonEl.onclick = function () {combat(ourHero.hClass.skill1);};
 
 buttonEl = document.getElementById('action3');
-buttonEl.textContent = 'test3';
-buttonEl.onclick = combat;
+buttonEl.textContent = ourHero.hClass.skill2[0];
+buttonEl.onclick = function () {combat(ourHero.hClass.skill2);};
 
 buttonEl = document.getElementById('action4');
-buttonEl.textContent = 'test4';
-buttonEl.onclick = combat;
+buttonEl.textContent = ourHero.hClass.skill3[0];
+buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
 
 // DONE: complete the function to hadle combat logic.
 
@@ -43,10 +43,12 @@ buttonEl.onclick = combat;
 */
 //NOTE: This function might be the event listener or the function call
 // for the listener(24 Jun. 2019)
-function combat() {
-  ourMonster.Hp -= heroAttack('addlater');
+function combat(ability) {
+  console.log(ability[0]);
+  ourMonster.Hp -= heroAttack(ability);
 
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+  setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
   if (ourMonster.Hp <= 0){
     ourHero.killCount++;
     battleResult(0);
@@ -64,14 +66,15 @@ function combat() {
 
 /*
 @func: heroAttack
-@param: ability - (string), target - monster object
+@param: ability - (Array [name, dmg, mp cost]), target - monster object
 @ret: damage - integer damage to be delt to the target.
 @desc: This function will use the passed ability to calculate
   damage to deal to the passed target.
 */
 function heroAttack(ability, target) {
   var damage;
-  damage = Math.random() * 15;
+  damage = Math.random() * ability[1];
+  ourHero.Mp -= ability[2];
   return damage;
 }
 
