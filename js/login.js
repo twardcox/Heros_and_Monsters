@@ -11,7 +11,7 @@ formEl.onsubmit = begin;
 
 function begin() {
   event.preventDefault();
-  console.log("hello");
+  console.log('hello');
   var charName = document.getElementById('charName').value;
   localStorage.setItem('name', charName);
   if (localStorage.getItem(charName) !== null) {
