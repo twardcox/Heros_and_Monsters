@@ -25,15 +25,33 @@ buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
 
 buttonEl = document.getElementById('action2');
 buttonEl.textContent = ourHero.hClass.skill1[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.skill1);};
+// Check if we have enough MP.
+if(ourHero.Mp > ourHero.hClass.skill1[2]){ // We do, use skill.
+  buttonEl.onclick = function () {combat(ourHero.hClass.skill1);};
+}
+else{ // We don't, use basic attack.
+  buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
+}
 
 buttonEl = document.getElementById('action3');
 buttonEl.textContent = ourHero.hClass.skill2[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.skill2);};
+// Check if we have enough MP.
+if(ourHero.Mp > ourHero.hClass.skill2[2]){ // We do, use skill.
+  buttonEl.onclick = function () {combat(ourHero.hClass.skill2);};
+}
+else{ // We don't, use basic attack.
+  buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
+}
 
 buttonEl = document.getElementById('action4');
 buttonEl.textContent = ourHero.hClass.skill3[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
+// Check if we have enough MP.
+if(ourHero.Mp > ourHero.hClass.skill3[2]){ // We do, use skill.
+  buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
+}
+else{ // We don't, use basic attack.
+  buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
+}
 
 // DONE: complete the function to hadle combat logic.
 
