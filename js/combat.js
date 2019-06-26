@@ -14,9 +14,9 @@ var ourName = localStorage.getItem('name');
 var ourHero = heroLoad(ourName);
 var ourMonster = monsterLoad('testmon');
 
-setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
-setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
-setMeter('heroMpMeter', ourHero.Hp, ourHero.Max[0]);
+setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
+setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
 
 //DONE: create on click function for 4 buttons
 var buttonEl = document.getElementById('action1');
