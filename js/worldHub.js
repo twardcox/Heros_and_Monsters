@@ -25,7 +25,7 @@ var battleBtnEl = document.getElementById('start-battle');
 
 // Go to the combat pate
 battleBtnEl.addEventListener('click', function() {
-  window.location.href = './client/combatArena.html';
+  window.location.href = '../client/combatArena.html';
 });
 
 // generates a percentage for modifying the width of a status bar.
