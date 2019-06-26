@@ -1,7 +1,6 @@
-
 h1 {
-    text-align: center;
-    font-size: 8vw;
+  text-align: center;
+  font-size: 8vw;
 }
 
 header > nav > a > img {
@@ -22,46 +21,48 @@ div.outerMeter {
 #hero-stats ul {
   float: left;
   margin: 0;
-  }
+}
 
 #monster-stats {
   text-align: left;
   width: 50%;
-  position:absolute;
+  position: absolute;
   top: 10%;
   right: 0;
 }
 
 #monster-stats ul {
   float: right;
-    margin: 0;
-  }
+  margin: 0;
+}
 
 #attack-actions ul {
   text-align: center;
 }
 
 #stats-header {
-   height: 9vw;
-   position: relative;
+  height: 9vw;
+  position: relative;
 }
 
 #combat-arena {
-  position:relative;
+  position: relative;
   height: 22vw;
 }
 
 img {
   position: absolute;
   width: 20vw;
+  
   top: 10%;
 }
 
 #hero-img {
   left: 20%;
+  height: 19vw;
 }
 
 #monster-img {
   right: 20%;
+  height: 19vw;
 }
-
