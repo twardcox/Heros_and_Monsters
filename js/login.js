@@ -3,10 +3,15 @@
 
 // TODO: Form Listener required, should read in a string for character name.
 //  Either load or create new hero.
-var buttonEl = document.getElementById('beginButton');
-buttonEl.onclick = begin;
+// var buttonEl = document.getElementById('beginButton');
+// buttonEl.onclick = begin;
+
+var formEl = document.getElementById('login-form');
+formEl.onsubmit = begin;
 
 function begin() {
+  event.preventDefault();
+  console.log("hello");
   var charName = document.getElementById('charName').value;
   localStorage.setItem('name', charName);
   if (localStorage.getItem(charName) !== null) {
