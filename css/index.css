@@ -1,6 +1,6 @@
 p {
     text-align: center;
-    margin: 5vh;
+    margin: 1vh;
 }
 
 main img {
@@ -8,6 +8,7 @@ main img {
     margin:auto;
     border-radius: 200px;
     border: 10px solid #FFD100;
+    width: 20vw;
 }
 
 input {

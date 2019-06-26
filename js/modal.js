@@ -27,8 +27,8 @@ openModalEl.addEventListener('click', function() {
     heroRest(tempHero);
     console.log(tempHero);
     heroSave(tempHero);
-    setMeter('hpMeter', 100, 100);
-    setMeter('mpMeter', 100, 100);
+    setMeter('heroHpMeter', 100, 100);
+    setMeter('heroMpMeter', 100, 100);
   }
 });
 
