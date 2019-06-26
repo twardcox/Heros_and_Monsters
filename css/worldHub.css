@@ -14,7 +14,7 @@ main > section:last-child {
     position: relative;
 }
 
-img {
+main img {
     position:absolute;
     top: 10%;
     left: 10%;
