@@ -13,7 +13,7 @@ h6 {
 }
 
 h1 {
-  margin: 20px auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 50px;
   color: #007a6e;
@@ -22,6 +22,21 @@ h1 {
 h2 {
   text-align: center;
   font-size: 30px;
+}
+
+header{
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+nav {
+  text-align: left;
+}
+
+nav img {
+  border: none;
+  margin:0;
+  width: 30px;
 }
 
 strong {
