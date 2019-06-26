@@ -50,7 +50,6 @@ buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
 function combat(ability) {
   console.log(ability[0]);
   ourMonster.Hp -= heroAttack(ability);
-
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
   if (ourMonster.Hp <= 0){
@@ -58,8 +57,8 @@ function combat(ability) {
     battleResult(0);
   }
   ourHero.Hp -= monsterAttack('addLater');
-  setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
-  if (ourHero.Hp <= 0){
+  setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
+  if (ourHero.Hp <= 0) {
     battleResult(1);
   }
   heroSave(ourHero);
@@ -105,7 +104,7 @@ function setMeter(elId, currentScore, maxScore) {
 
   var maxWidth = parentEl.offsetWidth;
 
-  if(currentScore < 0){
+  if (currentScore < 0) {
     currentScore = 0;
   }
 
