@@ -1,7 +1,6 @@
-
 h1 {
-    text-align: center;
-    font-size: 8vw;
+  text-align: center;
+  font-size: 8vw;
 }
 
 header > nav > a > img {
@@ -22,49 +21,90 @@ div.outerMeter {
 #hero-stats ul {
   float: left;
   margin: 0;
-  }
+}
 
 #monster-stats {
   text-align: left;
   width: 50%;
-  position:absolute;
+  position: absolute;
   top: 10%;
   right: 0;
 }
 
 #monster-stats ul {
   float: right;
-    margin: 0;
-  }
+  margin: 0;
+}
 
 #attack-actions ul {
   text-align: center;
 }
 
 #stats-header {
-   height: 9vw;
-   position: relative;
+  height: 9vw;
+  position: relative;
 }
 
 #combat-arena {
-  position:relative;
+  position: relative;
   height: 22vw;
 }
 
 img {
   position: absolute;
   width: 20vw;
+  
   top: 10%;
 }
 
 #hero-img {
   left: 20%;
+  height: 19vw;
 }
 
 #monster-img {
   right: 20%;
+  height: 19vw;
 }
 
-.test {
-  color: black;
+/* SHAKE EFFECT */
+
+ .shakeEffect {
+  animation: shake .7s;
+  animation-iteration-count: 1;
+ }
+
+   @keyframes shake {
+  0% { transform: translate(2px, 2px) rotate(1deg); }
+  10% { transform: translate(-2px, -3px) rotate(-3deg); }
+  20% { transform: translate(-5px, 0px) rotate(3deg); }
+  30% { transform: translate(5px, 3px) rotate(1deg); }
+  40% { transform: translate(2px, -2px) rotate(3deg); }
+  50% { transform: translate(-2px, 3px) rotate(-3deg); }
+  60% { transform: translate(-5px, 2px) rotate(1deg); }
+  70% { transform: translate(5px, 2px) rotate(-3deg); }
+  80% { transform: translate(-2px, -2px) rotate(3deg); }
+  90% { transform: translate(2px, 3px) rotate(1deg); }
+  100% { transform: translate(2px, -3px) rotate(-3deg); }
 }
+
+  .shake2Effect {
+  animation: shake2 .8s;
+  animation-iteration-count: 1;
+ }
+
+   @keyframes shake2 {
+
+    0% { transform: translate(-5px, 2px) rotate(1deg); }
+  15% { transform: translate(5px, 2px) rotate(-3deg); }
+  25% { transform: translate(-2px, -2px) rotate(3deg); }
+  35% { transform: translate(2px, 3px) rotate(1deg); }
+  45% { transform: translate(2px, -3px) rotate(-3deg); }
+  55% { transform: translate(2px, 2px) rotate(1deg); }
+  65% { transform: translate(-2px, -3px) rotate(-3deg); }
+  75% { transform: translate(-5px, 0px) rotate(3deg); }
+  85% { transform: translate(5px, 3px) rotate(1deg); }
+  95% { transform: translate(2px, -2px) rotate(3deg); }
+  100% { transform: translate(-2px, 3px) rotate(-3deg); }
+
+   } 

@@ -81,6 +81,7 @@ function combat(ability) {
   }
   heroSave(ourHero);
   monsterSave(ourMonster);
+  shakeImages();
 }
 
 //TODO:INPROGRESS: add a function to calculate the hero damage
@@ -129,4 +130,30 @@ function setMeter(elId, currentScore, maxScore) {
   var currWidth = (maxWidth / maxScore) * currentScore;
 
   childEl.style.width = `${currWidth}px`;
+}
+
+// SHAKE EFFECT
+// https://www.w3schools.com/howto/howto_css_shake_image.asp
+
+
+function shakeImages() {
+
+  // SHAKE THE HERO
+  var heroToShakeEl = document.getElementById('hero-img');
+  heroToShakeEl.className = 'shakeEffect';
+
+  heroToShakeEl.addEventListener('webkitAnimationEnd', function(){
+    if(heroToShakeEl.className === 'shakeEffect')
+      heroToShakeEl.className = '';
+  });
+
+  // SHAKE THE MONSTER
+
+  var monsterToShakeEl = document.getElementById('monster-img');
+  monsterToShakeEl.className = 'shake2Effect';
+  monsterToShakeEl.addEventListener('webkitAnimationEnd', function(){
+    if(monsterToShakeEl.className === 'shake2Effect')
+      monsterToShakeEl.className = '';
+  });
+
 }
