@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 'use strict';
 // This file will hold logic for the worldHub HTLM page such as
@@ -25,7 +26,7 @@ kcEl.innerHTML = levelAndKcStr;
 // Get the element of the battle button
 var battleBtnEl = document.getElementById('start-battle');
 
-// Go to the combat pate
+// Go to the combat page
 battleBtnEl.addEventListener('click', function() {
   window.location.href = 'combatArena.html';
 });
