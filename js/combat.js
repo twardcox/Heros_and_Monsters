@@ -59,7 +59,7 @@ function combat(ability) {
     damage = heroAttack(ourHero.hClass.attack);
   }
   ourMonster.Hp -= damage;
-  logStr += 'You delt ' + damage.toFixed(2) + ' damage.';
+  logStr += 'You delt <span>' + damage.toFixed(2) + '</span> damage.';
   // Update meters (Hero).
   setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
   setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
@@ -70,14 +70,14 @@ function combat(ability) {
   }
   damage = monsterAttack('');
   ourHero.Hp -= damage;
-  logStr += ' The monster delt ' + damage.toFixed(2) + ' to you.';
+  logStr += ' The monster delt <span>' + damage.toFixed(2) + '</span> to you.';
   // Update meter (Monster).
   setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
   if (ourHero.Hp <= 0) { // The monster won the fight.
     battleResult(1);
   }
   // Write the log message.
-  h1El.textContent = logStr;
+  h1El.innerHTML = logStr;
   // Update local storage.
   heroSave(ourHero);
   monsterSave(ourMonster);

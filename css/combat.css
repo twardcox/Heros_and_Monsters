@@ -8,6 +8,10 @@ header > nav > a > img {
   top: 2%;
 }
 
+span {
+  color:red;
+}
+
 div.outerMeter {
   margin: 0;
 }
