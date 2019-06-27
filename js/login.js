@@ -6,6 +6,11 @@
 // var buttonEl = document.getElementById('beginButton');
 // buttonEl.onclick = begin;
 
+
+
+
+
+
 var formEl = document.getElementById('login-form');
 formEl.onsubmit = begin;
 
@@ -24,4 +29,4 @@ function begin() {
   window.location.href = './client/worldHub.html';
 }
 
-// TODO: Add a function to check for existing hero in local storage by name.
+
