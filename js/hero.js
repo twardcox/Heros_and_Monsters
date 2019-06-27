@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
 // Hero Constructor (MaxArr = [Max HP, Max MP, kcToLevel])
@@ -58,11 +59,11 @@ function heroLoad(heroName) {
 */
 function heroLevelUp(heroObj) {
   // Check for required kc.
-  if(heroObj.killCount >= heroObj.Max[2]) {
+  if (heroObj.killCount >= heroObj.Max[2]) {
     // Increment level, stats and required kc.
-    heroObj.Max[0] += heroObj.Max[0]*0.10; // HP
-    heroObj.Max[1] += heroObj.Max[1]*0.10; // MP
-    heroObj.Max[2] += heroObj.Max[2]*0.10; // kcToLevel
+    heroObj.Max[0] += heroObj.Max[0] * 0.1; // HP
+    heroObj.Max[1] += heroObj.Max[1] * 0.1; // MP
+    heroObj.Max[2] += heroObj.Max[2] * 0.1; // kcToLevel
     heroObj.Level++;
     // Recover Hp, Mp and save data.
     heroRest(heroObj);
