@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 'use strict';
 // This file will hold logic for the worldHub HTLM page such as
@@ -8,18 +9,16 @@ var charName = localStorage.getItem('name');
 var ourHero = heroLoad(charName);
 
 var kcEl = document.getElementById('kill-count');
+var levelAndKcStr = '';
 
 var headerEl = document.getElementById('welcomeTitle');
 headerEl.textContent = 'Welcome, ' + ourHero.Name;
 
-
-// DONE(IN MODAL.JS): Create a listener for clicking on element that will rest hero.
-
-
-// DONE: Create a function that displays hero data. (HTML Structure required)
+// Set meters and render level-killcount string.
 setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
 setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
-kcEl.textContent = ourHero.killCount;
+levelAndKcStr = ourHero.killCount + '<br>Level: ' + ourHero.Level;
+kcEl.innerHTML = levelAndKcStr;
 
 
 // BUTTON TO START BATTLE
@@ -27,7 +26,7 @@ kcEl.textContent = ourHero.killCount;
 // Get the element of the battle button
 var battleBtnEl = document.getElementById('start-battle');
 
-// Go to the combat pate
+// Go to the combat page
 battleBtnEl.addEventListener('click', function() {
   window.location.href = 'combatArena.html';
 });

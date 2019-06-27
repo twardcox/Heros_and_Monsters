@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
+
 'use strict';
-// Monster Constructor
+
+// Monster Constructor, maxArr = [MaxHp, MaxMp]
 function Monster(name, maxArr, hp, mp, imgPath) {
   this.Name = name;
   this.Max = maxArr;
@@ -8,13 +11,13 @@ function Monster(name, maxArr, hp, mp, imgPath) {
   this.imgPath = imgPath;
 }
 
-// save monster data to local storage
+// Save monster data to local storage
 function monsterSave(monsterObj) {
   var data = JSON.stringify(monsterObj);
   localStorage.setItem(monsterObj.Name, data);
 }
 
-// load monster data from local storage.
+// Load monster data from local storage
 function monsterLoad(monsterName) {
   var dataStr = localStorage.getItem(monsterName);
   dataStr = JSON.parse(dataStr);

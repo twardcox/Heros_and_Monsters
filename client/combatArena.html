@@ -1,81 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/combat.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
-    <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat&display=swap" rel="stylesheet" />
-    <title>Let's get ready to RUMMBLE!</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="../index.html"><img src="../img/home.png"/></a>
-      </nav>
-    </header>
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <link rel="stylesheet" href="../css/theme.css" />
+          <link rel="stylesheet" href="../css/combat.css" />
+          <link rel="stylesheet" href="../css/modal.css" />
+          <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat&display=swap" rel="stylesheet" />
+          <title>Let's get ready to RUMMBLE!</title>
+        </head>
+        <body>
+          <header>
+            <nav>
+              <a href="../index.html"><img src="../img/home.png"/></a>
+            </nav>
+          </header>
 
-    <h1 id="cbLog">Put 'em up!</h1>
-    <main>
-      <div id="stats-header">
-        <div id="hero-stats">
-          <ul>
-            <li>
-              <strong>HP:</strong>
-              <div class="outerMeter"><div id="heroHpMeter"></div></div>
-            </li>
-            <li>
-              <strong>MP:</strong>
-              <div class="outerMeter"><div id="heroMpMeter"></div></div>
-            </li>
-          </ul>
-        </div>
-        <div id="monster-stats">
-          <ul>
-            <li>
-              <strong>HP:</strong>
-              <div class="outerMeter"><div id="monHpMeter"></div></div>
-            </li>
-          </ul>
-        </div>
-      </div>
+          <h1 id="cbLog">Put 'em up!</h1>
+          <main>
+            <div id="stats-header">
+              <div id="hero-stats">
+                <ul>
+                  <li>
+                    <strong>HP:</strong>
+                    <div class="outerMeter"><div id="heroHpMeter"></div></div>
+                  </li>
+                  <li>
+                    <strong>MP:</strong>
+                    <div class="outerMeter"><div id="heroMpMeter"></div></div>
+                  </li>
+                </ul>
+              </div>
+              <div id="monster-stats">
+                <ul>
+                  <li>
+                    <strong>HP:</strong>
+                    <div class="outerMeter"><div id="monHpMeter"></div></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-      <div id="combat-arena">
-        <img id="hero-img" src="../img/hero1.jpg" alt="Picture of your hero" />
+            <div id="combat-arena">
+              <img id="hero-img" src="../img/hero1.jpg" alt="Picture of your hero" />
 
-        <img id="monster-img" src="../img/monster.jpg" alt="Picture of the monster" />
-      </div>
-      <div id="attack-actions">
-        <ul>
-          <li><button id="action1">Action 1</button></li>
-          <li><button id="action2">Action 2</button></li>
-          <li><button id="action3">Action 3</button></li>
-          <li><button id="action4">Action 4</button></li>
-        </ul>
-      </div>
-    </main>
+              <img id="monster-img" src="../img/monster.jpg" alt="Picture of the monster" />
+            </div>
+            <div id="attack-actions">
+              <ul>
+                <li><button id="action1">Action 1</button></li>
+                <li><button id="action2">Action 2</button></li>
+                <li><button id="action3">Action 3</button></li>
+                <li><button id="action4">Action 4</button></li>
+              </ul>
+            </div>
+          </main>
 
-    <button id="open-modal" style="visibility: hidden">Open the modal</button>
+          <button id="open-modal" style="visibility: hidden">Open the modal</button>
 
-    <!-- The Modal -->
-    <div id="modal-container" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>WINNER:</h2>
-        <p><img id="winnerImg" src=""></p>
-        <p id="modal-message"></p>
-        <button id="modal-continue">Start over</button><br>
-        <a style="visibility: hidden" href="#" id="modal-close">Close</a>
-      </div>
-    </div>
-
-    <script src="../js/global.js"></script>
-    <script src="../js/hero.js"></script>
-    <script src="../js/monster.js"></script>
-    <script src="../js/combat.js"></script>
-    <script src="../js/modal.js"></script>
-  </body>
-</html>
+          <!-- The Modal -->
+          <div id="modal-container" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>WINNER:</h2>
+              <p><img id="winnerImg" src=""></p>
+              <p id="modal-message"></p>
+              <button id="modal-continue">Start over</button><br>
+              <a style="visibility: hidden" href="#" id="modal-close">Close</a>
+            </div>
+          </div>
+          
+          <!-- adding audio to the combat page -->
+        <audio id="myAudio" autoplay>
+          <source src="https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3">
+        </audio>
+          <script>
+        function myFunction() {
+          var autoplay = document.getElementById("myAudio").autoplay;
+        }
+          </script> 
+          <script src="../js/global.js"></script>
+          <script src="../js/hero.js"></script>
+          <script src="../js/monster.js"></script>
+          <script src="../js/combat.js"></script>
+          <script src="../js/modal.js"></script>
+        </body>
+      </html>

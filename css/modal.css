@@ -22,6 +22,7 @@
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
   max-width: 600px;
+
 }
 
 /* The Close Button */
@@ -56,3 +57,25 @@
   color: #aa1113;
   font-size: 50px;
 }
+
+.winner {
+  animation: bounce .3s infinite alternate;
+  -webkit-animation: bounce .3s infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
