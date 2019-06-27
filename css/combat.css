@@ -94,6 +94,7 @@ img {
   100% { transform: translate(2px, -3px) rotate(-3deg); }
 }
 
+
 /* Shake animation for the monster */
 
   .shake2Effect {
@@ -116,3 +117,4 @@ img {
   100% { transform: translate(-2px, 3px) rotate(-3deg); }
 
    } 
+

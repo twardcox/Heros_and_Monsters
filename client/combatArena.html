@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,13 +12,14 @@
     <title>Let's get ready to RUMMBLE!</title>
   </head>
   <body>
+
     <header>
-      <nav>
-        <a href="../index.html"><img src="../img/home.png"/></a>
-      </nav>
+        <nav>
+            <a href="../index.html"><img src="../img/home.png" ></a>
+          </nav>
     </header>
 
-    <h1 id="cbLog">Put 'em up!</h1>
+    <h1>Put 'em up!</h1>
     <main>
       <div id="stats-header">
         <div id="hero-stats">
@@ -57,25 +59,33 @@
       </div>
     </main>
 
-    <button id="open-modal" style="visibility: hidden">Open the modal</button>
+   <button id="open-modal" style="visibility: hidden">Open the modal</button> 
 
     <!-- The Modal -->
     <div id="modal-container" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>WINNER:</h2>
-        <p><img id="winnerImg" src=""></p>
         <p id="modal-message"></p>
-        <button id="modal-continue">Start over</button><br>
-        <a style="visibility: hidden" href="#" id="modal-close">Close</a>
+        <button id="modal-continue">Start over</button>
+        <a href="#" id="modal-close">Close</a>
       </div>
     </div>
 
+   <!-- adding audio to the combat page -->
+   <audio id="myAudio" autoplay>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3">
+   </audio>
+    <script>
+  function myFunction() {
+    var autoplay = document.getElementById("myAudio").autoplay;
+  }
+    </script> 
     <script src="../js/global.js"></script>
     <script src="../js/hero.js"></script>
     <script src="../js/monster.js"></script>
     <script src="../js/combat.js"></script>
     <script src="../js/modal.js"></script>
+      
   </body>
 </html>
