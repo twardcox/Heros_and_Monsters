@@ -1,24 +1,32 @@
 'use strict';
 // This file will hold all logic for the combatArena HTML page.
 //
+
 var genMonInx = Math.floor(Math.random() * 4);
 var monImgEl = document.getElementById('monster-img');
 
-var testMonster = new Monster('testmon', [100, 100], 100, 100, monsterImgArray[genMonInx]);
 
-monsterSave(testMonster);
-monImgEl.src = testMonster.imgPath;
-//
-
+// Load our charater info.
 var ourName = localStorage.getItem('name');
 var ourHero = heroLoad(ourName);
+
+// Generate monster.
+var genMonInx = Math.floor(Math.random()*4);
+var monImgEl = document.getElementById('monster-img');
+var monHp = 100 + ourHero.Max[0] * 0.10;
+var testMonster = new Monster('testmon', [monHp, 100], monHp, 100, monsterImgArray[genMonInx]);
+monsterSave(testMonster);
+monImgEl.src = testMonster.imgPath;
+
 var ourMonster = monsterLoad('testmon');
 
-setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
-setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
+
+// Set stat meters.
+setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
 setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
 
-//DONE: create on click function for 4 buttons
+// Update and link 4 buttons and their functionalities.
 var buttonEl = document.getElementById('action1');
 buttonEl.textContent = ourHero.hClass.attack[0];
 buttonEl.onclick = function() {
@@ -43,8 +51,6 @@ buttonEl.onclick = function() {
   combat(ourHero.hClass.skill3);
 };
 
-// DONE: complete the function to hadle combat logic.
-
 /*
 @func: combat
 @param: heroObj - our hero, monsterObj - monster
@@ -53,13 +59,10 @@ buttonEl.onclick = function() {
   It will call hero attack, monster attack, redraw screen (life-bars, mp-bar)
   Verfiy life of both hero and monster.
 */
-//NOTE: This function might be the event listener or the function call
-// for the listener(24 Jun. 2019)
 function combat(ability) {
-  console.log(ability[0]);
-  var logStr = '';
-  var h1El = document.getElementById('cbLog');
-  var damage = 0;
+  var logStr = ''; // String to hold log message.
+  var h1El = document.getElementById('cbLog'); // Log HTML element.
+  var damage = 0; // Holds damage calculation.
   // Mp check
   if (ourHero.Mp >= ability[2]) {
     damage = heroAttack(ability);
@@ -69,27 +72,35 @@ function combat(ability) {
     damage = heroAttack(ourHero.hClass.attack);
   }
   ourMonster.Hp -= damage;
+
   logStr += 'You delt <span>' + damage.toFixed(2) + '</span> damage.';
+  // Update meters (Hero).
   setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
   setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
-  if (ourMonster.Hp <= 0) {
+  // The hero won the fight.
+  if (ourMonster.Hp <= 0) { 
     ourHero.killCount++;
+    heroLevelUp(ourHero);
     battleResult(0);
   }
-  damage = monsterAttack('addLater');
+  damage = monsterAttack('');
   ourHero.Hp -= damage;
+
   logStr += ' The monster delt <span>' + damage.toFixed(2) + '</span> to you.';
+  // Update meter (Monster).
   setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
-  if (ourHero.Hp <= 0) {
+  // The monster won the fight.
+  if (ourHero.Hp <= 0) { 
     battleResult(1);
   }
+
+  // Write the log message.
   h1El.innerHTML = logStr;
+  // Update local storage.
   heroSave(ourHero);
   monsterSave(ourMonster);
   shakeImages();
 }
-
-//TODO:INPROGRESS: add a function to calculate the hero damage
 
 /*
 @func: heroAttack
@@ -105,7 +116,6 @@ function heroAttack(ability, target) {
   return damage;
 }
 
-//TODO:INPROGRESS add a function that will calculate monster attack damage.
 /*
 @func: monsterAttack
 @param: ability - (string), target - hero object
@@ -113,7 +123,6 @@ function heroAttack(ability, target) {
 @desc: This function will use the passed ability to calculate
   damage to deal to the passed target.
 */
-// NOTE: ability will be NULL for MVP and unused in the function (24 Jun. 2019)
 function monsterAttack(ability, target) {
   var damage;
   damage = Math.random() * 15;
