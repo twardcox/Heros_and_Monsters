@@ -12,6 +12,19 @@ div.outerMeter {
   margin: 0;
 }
 
+span {
+  color: red;
+   text-shadow:
+    -2px -2px 0 #000,
+     0   -2px 0 #000,
+     2px -2px 0 #000,
+     2px  0   0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+    -2px  2px 0 #000,
+    -2px  0   0 #000;
+}
+
 #hero-stats {
   width: 50%;
   position: absolute;

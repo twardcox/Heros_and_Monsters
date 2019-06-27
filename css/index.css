@@ -1,6 +1,7 @@
 p {
     text-align: center;
     margin: 1vh;
+    font-weight: bold;
 }
 
 main img {
@@ -9,6 +10,12 @@ main img {
     border-radius: 200px;
     border: 10px solid #FFD100;
     width: 20vw;
+}
+
+hr {
+  width: 50%;
+  height: 3px;
+  background-color: black;
 }
 
 input {

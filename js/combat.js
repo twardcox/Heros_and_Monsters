@@ -1,7 +1,7 @@
 'use strict';
 // This file will hold all logic for the combatArena HTML page.
 //
-var genMonInx = Math.floor(Math.random()*4);
+var genMonInx = Math.floor(Math.random() * 4);
 var monImgEl = document.getElementById('monster-img');
 
 var testMonster = new Monster('testmon', [100, 100], 100, 100, monsterImgArray[genMonInx]);
@@ -14,26 +14,34 @@ var ourName = localStorage.getItem('name');
 var ourHero = heroLoad(ourName);
 var ourMonster = monsterLoad('testmon');
 
-setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
-setMeter('heroHpMeter',ourHero.Hp, ourHero.Max[0]);
+setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
+setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
 setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
 
 //DONE: create on click function for 4 buttons
 var buttonEl = document.getElementById('action1');
 buttonEl.textContent = ourHero.hClass.attack[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.attack);};
+buttonEl.onclick = function() {
+  combat(ourHero.hClass.attack);
+};
 
 buttonEl = document.getElementById('action2');
 buttonEl.textContent = ourHero.hClass.skill1[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.skill1);};
+buttonEl.onclick = function() {
+  combat(ourHero.hClass.skill1);
+};
 
 buttonEl = document.getElementById('action3');
 buttonEl.textContent = ourHero.hClass.skill2[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.skill2);};
+buttonEl.onclick = function() {
+  combat(ourHero.hClass.skill2);
+};
 
 buttonEl = document.getElementById('action4');
 buttonEl.textContent = ourHero.hClass.skill3[0];
-buttonEl.onclick = function () {combat(ourHero.hClass.skill3);};
+buttonEl.onclick = function() {
+  combat(ourHero.hClass.skill3);
+};
 
 // DONE: complete the function to hadle combat logic.
 
@@ -53,29 +61,29 @@ function combat(ability) {
   var h1El = document.getElementById('cbLog');
   var damage = 0;
   // Mp check
-  if(ourHero.Mp >= ability[2]) {
+  if (ourHero.Mp >= ability[2]) {
     damage = heroAttack(ability);
-  }
-  else { // We don't have enough mp, use regular attack.
+  } else {
+    // We don't have enough mp, use regular attack.
     logStr += 'You didn\'t have enough MP to use ' + ability[0] + '. ';
     damage = heroAttack(ourHero.hClass.attack);
   }
   ourMonster.Hp -= damage;
-  logStr += 'You delt ' + damage.toFixed(2) + ' damage.';
-  setMeter('monHpMeter',ourMonster.Hp, ourMonster.Max[0]);
+  logStr += 'You delt <span>' + damage.toFixed(2) + '</span> damage.';
+  setMeter('monHpMeter', ourMonster.Hp, ourMonster.Max[0]);
   setMeter('heroMpMeter', ourHero.Mp, ourHero.Max[1]);
-  if (ourMonster.Hp <= 0){
+  if (ourMonster.Hp <= 0) {
     ourHero.killCount++;
     battleResult(0);
   }
   damage = monsterAttack('addLater');
   ourHero.Hp -= damage;
-  logStr += ' The monster delt ' + damage.toFixed(2) + ' to you.';
+  logStr += ' The monster delt <span>' + damage.toFixed(2) + '</span> to you.';
   setMeter('heroHpMeter', ourHero.Hp, ourHero.Max[0]);
   if (ourHero.Hp <= 0) {
     battleResult(1);
   }
-  h1El.textContent = logStr;
+  h1El.innerHTML = logStr;
   heroSave(ourHero);
   monsterSave(ourMonster);
   shakeImages();
@@ -132,25 +140,20 @@ function setMeter(elId, currentScore, maxScore) {
 // SHAKE EFFECT
 // https://www.w3schools.com/howto/howto_css_shake_image.asp
 
-
 function shakeImages() {
-
   // SHAKE THE HERO
   var heroToShakeEl = document.getElementById('hero-img');
   heroToShakeEl.className = 'shakeEffect';
 
-  heroToShakeEl.addEventListener('webkitAnimationEnd', function(){
-    if(heroToShakeEl.className === 'shakeEffect')
-      heroToShakeEl.className = '';
+  heroToShakeEl.addEventListener('webkitAnimationEnd', function() {
+    if (heroToShakeEl.className === 'shakeEffect') heroToShakeEl.className = '';
   });
 
   // SHAKE THE MONSTER
 
   var monsterToShakeEl = document.getElementById('monster-img');
   monsterToShakeEl.className = 'shake2Effect';
-  monsterToShakeEl.addEventListener('webkitAnimationEnd', function(){
-    if(monsterToShakeEl.className === 'shake2Effect')
-      monsterToShakeEl.className = '';
+  monsterToShakeEl.addEventListener('webkitAnimationEnd', function() {
+    if (monsterToShakeEl.className === 'shake2Effect') monsterToShakeEl.className = '';
   });
-
 }
