@@ -1,6 +1,13 @@
 p {
     text-align: center;
     margin: 1vh;
+    font-weight: bold;
+}
+
+hr {
+    width: 50%;
+    height: 3px;
+    background-color: black;
 }
 
 main img {
@@ -9,6 +16,12 @@ main img {
     border-radius: 200px;
     border: 10px solid #FFD100;
     width: 20vw;
+}
+
+hr {
+  width: 50%;
+  height: 3px;
+  background-color: black;
 }
 
 input {
@@ -20,7 +33,7 @@ input {
 input[type=text] {
     border: 2px solid rgb(143, 143, 143);
     border-radius: 4px;
-  }
+}
 
 form {text-align: center;}
 
@@ -41,8 +54,8 @@ main > section {
 .homepage-title h1 {
     font-size: 70px;
     margin-bottom: 0px;
-  }
+}
   
   .homepage-title h2 {
     margin-top: 10px;
-  }
+}
