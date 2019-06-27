@@ -1,5 +1,5 @@
 'use strict';
-// Monster Constructor
+// Monster Constructor, maxArr = [MaxHp, MaxMp]
 function Monster(name, maxArr, hp, mp, imgPath) {
   this.Name = name;
   this.Max = maxArr;

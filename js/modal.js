@@ -35,11 +35,15 @@ openModalEl.addEventListener('click', function() {
 function battleResult(whoWon){
   modalEl.style.display = 'block';
   var modalMsgEl = document.getElementById('modal-message');
+  var winnerImgEl = document.getElementById('winnerImg');
   if(whoWon === 0) { // Hero Victory
-    modalMsgEl.innerHTML = 'You defeated the monster!';
+    modalMsgEl.innerHTML = 'You defeated the monster.';
+    winnerImgEl.setAttribute('src', ourHero.imgPath);
+
   }
   else {
-    modalMsgEl.innerHTML = 'You have been defeated...';
+    modalMsgEl.innerHTML = 'You have been defeated.';
+    winnerImgEl.setAttribute('src', ourMonster.imgPath);
   }
 }
 
