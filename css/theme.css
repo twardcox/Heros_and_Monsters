@@ -35,8 +35,9 @@ nav {
 
 nav img {
   border: none;
-  margin: 0;
+  margin: 0 15px 0 0 ;
   width: 30px;
+
 }
 
 strong {
@@ -59,6 +60,11 @@ ul {
 
 li {
   display: inline;
+}
+
+p {
+  margin: 16px auto;
+  text-align: center;
 }
 
 .outerMeter {
