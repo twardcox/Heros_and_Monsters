@@ -27,7 +27,7 @@ input {
 input[type=text] {
     border: 2px solid rgb(143, 143, 143);
     border-radius: 4px;
-  }
+}
 
 form {text-align: center;}
 
@@ -48,8 +48,8 @@ main > section {
 .homepage-title h1 {
     font-size: 70px;
     margin-bottom: 0px;
-  }
+}
   
   .homepage-title h2 {
     margin-top: 10px;
-  }
+}
