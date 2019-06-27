@@ -25,6 +25,19 @@ div.outerMeter {
   margin: 0;
 }
 
+span {
+  color: red;
+   text-shadow:
+    -2px -2px 0 #000,
+     0   -2px 0 #000,
+     2px -2px 0 #000,
+     2px  0   0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+    -2px  2px 0 #000,
+    -2px  0   0 #000;
+}
+
 #hero-stats {
   width: 50%;
   position: absolute;
@@ -68,7 +81,6 @@ div.outerMeter {
 img {
   position: absolute;
   width: 20vw;
-  
   top: 10%;
 }
 
@@ -127,5 +139,5 @@ img {
   85% { transform: translate(5px, 3px) rotate(1deg); }
   95% { transform: translate(2px, -2px) rotate(3deg); }
   100% { transform: translate(-2px, 3px) rotate(-3deg); }
-
-   } 
+  } 
+  
