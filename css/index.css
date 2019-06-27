@@ -1,6 +1,13 @@
 p {
     text-align: center;
     margin: 1vh;
+    font-weight: bold;
+}
+
+hr {
+    width: 50%;
+    height: 3px;
+    background-color: black;
 }
 
 main img {
